@@ -176,10 +176,10 @@ h3 {
 }
 .Main {
   width: 100%;
-  max-width: 1300px;
+  max-width: 110vw;
   height: 100dvh;
   min-height: 700px;
-  max-height: 800px;
+  max-height: 100dvh;
   position: relative;
   margin: 0 auto;
 }
