@@ -570,4 +570,24 @@ export const instructionSets = {
 			),
 		},
 	],
+	sandbox: [
+		{
+			page: 1,
+			title: "Introduction to MetroTopia",
+			content: (
+				<ul>
+					<li>Click tiles on the map to learn about the map.</li>
+					<li>
+						Buildings on the edge of the map connect to energy sources that are off the grid. Any adjacent buildings will also connect to these energy sources.
+					</li>
+					<li>
+						The menu in the top right gives you information about everything on the map.
+					</li>
+					<li>
+						In sandbox mode there are no win conditions, so you can build whatever you want!
+					</li>
+				</ul>
+			),
+		},
+	],
 };

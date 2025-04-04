@@ -11,6 +11,8 @@ import useAagGridStore from "./aagGridStore";
 import useAagResourcesStore from "./aagResourcesStore";
 import usePpGridStore from "./ppGridStore";
 import usePpResourcesStore from "./ppResourcesStore";
+import useSandboxGridStore from "./sandboxGridStore";
+import useSandboxResourcesStore from "./sandboxResourcesStore";
 
 // Configurations for different versions
 export const APP_VERSIONS = {
@@ -55,6 +57,13 @@ export const APP_VERSIONS = {
 		title: "MetroTopia: Policy Power",
 		gridStore: usePpGridStore,
 		resourceStore: usePpResourcesStore,
+	},
+	nr: {
+		id: "sandbox",
+		paths: ["sandbox"],
+		title: "MetroTopia",
+		gridStore: useSandboxGridStore,
+		resourceStore: useSandboxResourcesStore,
 	},
 };
 

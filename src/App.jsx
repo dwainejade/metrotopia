@@ -35,4 +35,8 @@ export const routes = [
 		path: "/pp",
 		Component: React.lazy(() => import("./routes/PP")),
 	},
+	{
+		path: "/sandbox", // No Restrictions for how and where buildings are placed
+		Component: React.lazy(() => import("./routes/Sandbox")),
+	}
 ];
