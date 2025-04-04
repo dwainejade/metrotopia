@@ -1,0 +1,527 @@
+@import "./variables.less";
+
+.construction-menu {
+	position: absolute;
+	top: 5%;
+	left: 2%;
+	width: 100%;
+	max-width: 500px;
+	height: auto;
+	max-height: 650px;
+	background-color: #fff;
+	border-radius: 25px;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	pointer-events: auto;
+	z-index: 100;
+
+	// Commercial is active
+	&.construction-commercial {
+		.header {
+			border-right: 1.6px solid @color-commercial-header;
+			border-bottom: 1.6px solid @color-commercial-header;
+
+			.title {
+				color: @color-commercial-header;
+			}
+		}
+
+		.content {
+			.building-types {
+				.btn-wrapper {
+					.building-btn {
+						border: 1.5px solid @color-commercial-header;
+
+						&.active {
+							background-color: @color-commercial-header;
+						}
+					}
+				}
+			}
+
+			.details-wrapper {
+				.structure-details {
+					.impact-grid,
+					.tile-grid {
+						p:first-child {
+							color: @color-commercial-text-secondary;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Services is active
+	&.construction-services {
+		.header {
+			border-right: 1.6px solid @color-services-header;
+			border-bottom: 1.6px solid @color-services-header;
+
+			.title {
+				color: @color-services-header;
+			}
+		}
+
+		.content {
+			.building-types {
+				.btn-wrapper {
+					.building-btn {
+						border: 1.5px solid @color-services-header;
+
+						&.active {
+							background-color: @color-services-header;
+						}
+					}
+				}
+			}
+
+			.details-wrapper {
+				.structure-details {
+					.impact-grid,
+					.tile-grid {
+						p:first-child {
+							color: @color-services-text-secondary;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Industrial is active
+	&.construction-industrial {
+		.header {
+			border-right: 1.6px solid @color-industrial-header;
+			border-bottom: 1.6px solid @color-industrial-header;
+
+			.title {
+				color: @color-industrial-header;
+			}
+		}
+
+		.content {
+			.building-types {
+				.btn-wrapper {
+					.building-btn {
+						border: 1.5px solid @color-industrial-header;
+
+						&.active {
+							background-color: @color-industrial-header;
+						}
+					}
+				}
+			}
+
+			.details-wrapper {
+				.structure-details {
+					.impact-grid,
+					.tile-grid {
+						p:first-child {
+							color: @color-industrial-text-secondary;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 35px;
+		border-right: 1.6px solid #4a7c4a;
+		border-bottom: 1.6px solid #4a7c4a;
+		margin-bottom: 15px;
+		width: 100%;
+		transition: 0.2s ease-in-out width;
+
+		.title {
+			font-size: 1.1rem;
+			text-transform: uppercase;
+			margin: 0;
+		}
+
+		.category-con {
+			position: absolute;
+			top: -24px;
+			right: 4px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 4px;
+
+			button {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 50%;
+				width: 38px;
+				height: 38px;
+				cursor: pointer;
+				transition: 0.3s ease-in-out all;
+				padding: 4px;
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+
+				&.residential-icon {
+					background-image: url("/assets/ui/construction-menu/residential-inactive.svg");
+
+					&.active {
+						background-image: url("/assets/ui/construction-menu/residential-active.svg");
+					}
+				}
+				&.commercial-icon {
+					background-image: url("/assets/ui/construction-menu/commercial-inactive.svg");
+
+					&.active {
+						background-image: url("/assets/ui/construction-menu/commercial-active.svg");
+					}
+				}
+				&.services-icon {
+					background-image: url("/assets/ui/construction-menu/services-inactive.svg");
+
+					&.active {
+						background-image: url("/assets/ui/construction-menu/services-active.svg");
+					}
+				}
+				&.industrial-icon {
+					background-image: url("/assets/ui/construction-menu/industrial-inactive.svg");
+
+					&.active {
+						background-image: url("/assets/ui/construction-menu/industrial-active.svg");
+					}
+				}
+
+				.icon {
+					border-radius: 50%;
+					background-color: rgba(94, 132, 94, 0.899);
+					padding: 4px;
+					width: 100%;
+					height: 100%;
+					font-size: 1.2rem;
+					color: #e4e4e4;
+				}
+
+				&.active {
+					background-color: #fff;
+					scale: 1.2;
+				}
+
+				&.pulse {
+					animation: pulseBorder 2s infinite; /* Infinite pulsing animation */
+				}
+
+				@keyframes pulseBorder {
+					0% {
+						box-shadow: 0 0 0 0px #ff950a;
+					}
+					100% {
+						box-shadow: 0 0 0 8px #ff950a00;
+					}
+				}
+			}
+		}
+	}
+
+	.content {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		overflow-y: auto;
+
+		.selected-structure-title {
+			margin-bottom: 0.5rem;
+			font-size: 14px;
+
+			&.residential {
+				color: @color-nature-header;
+			}
+
+			&.commercial {
+				color: @color-commercial-header;
+			}
+
+			&.services {
+				color: @color-services-header;
+			}
+
+			&.industrial {
+				color: @color-industrial-header;
+			}
+		}
+
+		.details-wrapper {
+			flex: 1;
+			min-height: 100px;
+			height: auto;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			padding: 6px 10px;
+			overflow-y: auto;
+
+			&.highlight {
+				background-color: #f1f1f1;
+			}
+
+			.structure-details {
+				h3 {
+					margin-top: 0;
+					color: #4a7c4a;
+				}
+
+				p {
+					margin: 5px 0;
+					font-size: 0.9rem;
+
+					&.tile-name {
+						font-weight: bold;
+						font-size: 12px;
+					}
+				}
+
+				.build-restrictions p {
+					font-size: 1rem;
+					color: salmon;
+				}
+
+				.impact-grid,
+				.tile-grid {
+					display: grid;
+					grid-template-columns: repeat(3, 1fr);
+					grid-template-rows: repeat(3, auto);
+					gap: 3px;
+
+					.wildlife-lwl {
+						grid-column: 1/2;
+						grid-row: 1;
+					}
+					.trees-lwl {
+						grid-column: 1/2;
+						grid-row: 2;
+					}
+					.temp-lwl {
+						grid-column: 2/3;
+						grid-row: 2;
+					}
+					.water-lwl {
+						grid-column: 3/4;
+						grid-row: 2;
+					}
+
+					.post-lizards-lwl {
+						grid-column: 3/4;
+						grid-row: 1;
+					}
+					.post-lizards-lwl {
+						grid-column: 1/2;
+						grid-row: 1;
+					}
+					.post-tree-lwl {
+						grid-column: 1/2;
+						grid-row: 2;
+					}
+					.post-temp-lwl {
+						grid-column: 2/3;
+						grid-row: 2;
+					}
+					.post-water-lwl {
+						grid-column: 3/4;
+						grid-row: 2;
+					}
+
+					.energy-source-note-item {
+						grid-column: 2/4;
+						grid-row: 4;
+
+						&.ess {
+							grid-column: 1/4;
+						}
+
+						.energy-source-note-text {
+							font-weight: normal;
+							color: #414042 !important;
+						}
+					}
+
+					.wastewater-grid-item {
+						grid-column: 1/4;
+						grid-row: 4;
+
+						&.post {
+							grid-row: 4;
+							grid-column: 2/4;
+
+							&.energy-present {
+								grid-row: 5;
+								grid-column: 1/4;
+							}
+						}
+
+						.wastewater-grid-text {
+							font-weight: normal;
+							color: #414042 !important;
+						}
+					}
+
+					p {
+						margin: 5px 0;
+						font-size: 12px;
+						font-weight: bold;
+
+						&.power-connection-item {
+							font-weight: normal;
+						}
+
+						&:first-child {
+							color: @color-nature-header;
+						}
+
+						&:last-child {
+							font-weight: normal;
+						}
+					}
+
+					.custom-select-wrapper {
+						position: relative;
+						display: inline-block;
+						width: 80%;
+					}
+
+					.custom-select {
+						/* Remove native arrow */
+						appearance: none;
+						-webkit-appearance: none;
+						-moz-appearance: none;
+						padding-right: 18px; /* Create space for the custom arrow */
+						width: 100%;
+						border: 1px solid #808285;
+						border-radius: 6px;
+						padding: 2px 4px;
+						background-color: white;
+						background-image: none; /* Remove any default background image */
+						cursor: pointer;
+						font-size: 12px;
+					}
+
+					/* Custom arrow and background */
+					.custom-select-wrapper::after {
+						content: "\25BC"; /* Unicode character for down arrow */
+						position: absolute;
+						top: 50%;
+						right: 1px;
+						width: 18px;
+						height: 94%;
+						background-color: #6d6e71; /* The grey background for the arrow area */
+						color: white; /* Arrow color */
+						font-size: 0.7rem;
+						text-align: center;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						pointer-events: none;
+						transform: translateY(-50%);
+						border-top-right-radius: 4px;
+						border-bottom-right-radius: 4px;
+					}
+
+					.custom-select::-ms-expand {
+						display: none; /* For Internet Explorer */
+					}
+				}
+			}
+		}
+	}
+
+	.building-types {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		width: 100%;
+		gap: 20px;
+		margin-bottom: 1rem;
+
+		.btn-wrapper {
+			.building-btn {
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				text-align: left;
+				font-size: 0.75rem;
+				background-color: transparent;
+				white-space: nowrap;
+				transition: 0.3s ease-in-out background-color;
+				width: 200px;
+				height: 40px;
+				border: 1px solid #406324;
+				border-radius: 25px;
+
+				.content-wrapper {
+					display: flex;
+					align-items: center;
+					translate: -25px;
+
+					.building-img {
+						width: 60px;
+						height: 60px;
+						object-fit: contain;
+					}
+					.building-name {
+						// cut text if it's too long
+						overflow: hidden;
+						text-overflow: ellipsis;
+						white-space: nowrap;
+						max-width: 100%;
+					}
+				}
+				&.active {
+					background-color: #4a7c4a;
+					color: white;
+				}
+			}
+		}
+
+		.disabled {
+			opacity: 0.5;
+		}
+	}
+
+	.footer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 50px;
+		border-top: 1px solid #ccc;
+		margin-top: 15px;
+		padding-top: 10px;
+		gap: 10px;
+
+		.info {
+			font-size: 12px;
+			flex: 1;
+		}
+
+		button {
+			border-radius: 4px;
+			cursor: pointer;
+			background-color: #f0f0f0;
+			border: 1px solid #ccc;
+			padding: 8px 15px;
+
+			&.build {
+				background-color: #4a7c4a;
+				color: white;
+			}
+
+			&:disabled {
+				opacity: 0.5;
+				cursor: not-allowed;
+			}
+		}
+	}
+}

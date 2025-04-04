@@ -1,0 +1,604 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #414042;
+}
+h1,
+h2,
+h3 {
+  font-family: 'Termina Heavy', sans-serif;
+}
+.nature-preserve h1,
+.residential h1,
+.nature-preserve h2,
+.residential h2,
+.nature-preserve h3,
+.residential h3 {
+  color: #006838;
+}
+.nature-preserve p,
+.residential p {
+  color: #006838;
+}
+.nature-preserve button,
+.residential button {
+  border-color: #92cfc4;
+}
+.nature-preserve button:hover,
+.residential button:hover {
+  background-color: #a6dbbe;
+}
+.commercial h1,
+.commercial h2,
+.commercial h3 {
+  color: #4c72b8;
+}
+.commercial p {
+  color: #4e72b0;
+}
+.commercial button {
+  border-color: #779de0;
+}
+.commercial button:hover {
+  background-color: #a1bef5;
+}
+.industrial h1,
+.industrial h2,
+.industrial h3 {
+  color: #8d5999;
+}
+.industrial p {
+  color: #784c82;
+}
+.industrial button {
+  border-color: #8d5999;
+}
+.industrial button:hover {
+  background-color: #d8aae3;
+}
+.services h1,
+.services h2,
+.services h3 {
+  color: #c78e67;
+}
+.services p {
+  color: #a8561e;
+}
+.services button {
+  border-color: #c78e67;
+}
+.services button:hover {
+  background-color: #dbb093;
+}
+.upgrade-menu {
+  position: absolute;
+  top: 6%;
+  left: 2%;
+  width: 100%;
+  max-width: 555px;
+  max-height: 625px;
+  border-radius: 25px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.upgrade-menu.commercial-info .header .title-wrapper {
+  border-bottom: 1px solid #4c72b8;
+}
+.upgrade-menu.commercial-info .header .title-wrapper .title {
+  color: #4c72b8;
+}
+.upgrade-menu.commercial-info .content .upgrades-wrapper {
+  color: #4e72b0;
+}
+.upgrade-menu.commercial-info .content .upgrades-wrapper .green-mods-con .columns .left-column .upgrade-toggles .toggle-wrapper .toggle,
+.upgrade-menu.commercial-info .content .upgrades-wrapper .green-mods-con .columns .right-column .upgrade-toggles .toggle-wrapper .toggle {
+  border: 1px solid #4e72b0;
+}
+.upgrade-menu.commercial-info .content .upgrades-wrapper .green-mods-con .columns .left-column .upgrade-toggles .toggle-wrapper .toggle.active,
+.upgrade-menu.commercial-info .content .upgrades-wrapper .green-mods-con .columns .right-column .upgrade-toggles .toggle-wrapper .toggle.active {
+  background-color: #4c72b8;
+}
+.upgrade-menu.commercial-info .content .details-wrapper .structure-details div p:first-child {
+  color: #4e72b0;
+}
+.upgrade-menu.services-info .header .title-wrapper {
+  border-bottom: 1px solid #c78e67;
+}
+.upgrade-menu.services-info .header .title-wrapper .title {
+  color: #c78e67;
+}
+.upgrade-menu.services-info .content .upgrades-wrapper {
+  color: #a8561e;
+}
+.upgrade-menu.services-info .content .upgrades-wrapper .green-mods-con .columns .left-column .upgrade-toggles .toggle-wrapper .toggle,
+.upgrade-menu.services-info .content .upgrades-wrapper .green-mods-con .columns .right-column .upgrade-toggles .toggle-wrapper .toggle {
+  border: 1px solid #a8561e;
+}
+.upgrade-menu.services-info .content .upgrades-wrapper .green-mods-con .columns .left-column .upgrade-toggles .toggle-wrapper .toggle.active,
+.upgrade-menu.services-info .content .upgrades-wrapper .green-mods-con .columns .right-column .upgrade-toggles .toggle-wrapper .toggle.active {
+  background-color: #c78e67;
+}
+.upgrade-menu.services-info .content .details-wrapper .structure-details div p:first-child {
+  color: #a8561e;
+}
+.upgrade-menu.industrial-info .header .title-wrapper {
+  border-bottom: 1px solid #8d5999;
+}
+.upgrade-menu.industrial-info .header .title-wrapper .title {
+  color: #8d5999;
+}
+.upgrade-menu.industrial-info .content .upgrades-wrapper {
+  color: #784c82;
+}
+.upgrade-menu.industrial-info .content .upgrades-wrapper .green-mods-con .columns .left-column .upgrade-toggles .toggle-wrapper .toggle,
+.upgrade-menu.industrial-info .content .upgrades-wrapper .green-mods-con .columns .right-column .upgrade-toggles .toggle-wrapper .toggle {
+  border: 1px solid #784c82;
+}
+.upgrade-menu.industrial-info .content .upgrades-wrapper .green-mods-con .columns .left-column .upgrade-toggles .toggle-wrapper .toggle.active,
+.upgrade-menu.industrial-info .content .upgrades-wrapper .green-mods-con .columns .right-column .upgrade-toggles .toggle-wrapper .toggle.active {
+  background-color: #8d5999;
+}
+.upgrade-menu.industrial-info .content .details-wrapper .structure-details div p:first-child {
+  color: #784c82;
+}
+.upgrade-menu .header {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  margin-bottom: 5px;
+}
+.upgrade-menu .header .building-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out all;
+  padding: 4px;
+  opacity: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.upgrade-menu .header .building-icon.residential-info {
+  background-image: url("/assets/ui/construction-menu/residential-active.svg");
+}
+.upgrade-menu .header .building-icon.commercial-info {
+  background-image: url("/assets/ui/construction-menu/commercial-active.svg");
+}
+.upgrade-menu .header .building-icon.services-info {
+  background-image: url("/assets/ui/construction-menu/services-active.svg");
+}
+.upgrade-menu .header .building-icon.industrial-info {
+  background-image: url("/assets/ui/construction-menu/industrial-active.svg");
+}
+.upgrade-menu .header .building-icon.nature-info {
+  background-image: url("/assets/ui/construction-menu/nature-icon.svg");
+}
+.upgrade-menu .header .building-icon .icon {
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 4px;
+  width: 100%;
+  height: 100%;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #006838;
+}
+.upgrade-menu .header .title-wrapper {
+  width: 100%;
+  border-bottom: 1px solid #406325;
+}
+.upgrade-menu .header .title-wrapper .title {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin: 0 0 2.5px 5px;
+  text-align: left;
+  color: #406325;
+}
+.upgrade-menu .header .menu-title {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  margin-left: 5px;
+  border-bottom: 1px solid #406325;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 1;
+  color: #406325;
+  font-weight: 900;
+  padding-left: 4px;
+}
+.upgrade-menu .content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.upgrade-menu .content .upgrades-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #406325;
+}
+.upgrade-menu .content .upgrades-wrapper .top-con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.upgrade-menu .content .upgrades-wrapper .top-con .upgrade-title {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.upgrade-menu .content .upgrades-wrapper .top-con .cost {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+}
+.upgrade-menu .content .upgrades-wrapper .top-con .cost .cost-bubble {
+  margin-left: 6px;
+  font-weight: bold;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con.mods-applied {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con.mods-applied .columns {
+  margin-bottom: 0;
+  gap: 0;
+  align-items: center;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con.mods-applied .columns.one .right-column .upgrade-toggles,
+.upgrade-menu .content .upgrades-wrapper .green-mods-con.mods-applied .columns.one .left-column .upgrade-toggles {
+  gap: 0;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con.mods-applied .columns.one .right-column .upgrade-toggles .toggle-wrapper .toggle,
+.upgrade-menu .content .upgrades-wrapper .green-mods-con.mods-applied .columns.one .left-column .upgrade-toggles .toggle-wrapper .toggle {
+  width: 160px;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con.mods-applied .columns.one .right-column .upgrade-toggles .toggle-wrapper .toggle .content-wrapper,
+.upgrade-menu .content .upgrades-wrapper .green-mods-con.mods-applied .columns.one .left-column .upgrade-toggles .toggle-wrapper .toggle .content-wrapper {
+  width: auto;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con.mods-applied .columns.one .right-column .upgrade-toggles .toggle-wrapper .toggle .content-wrapper img,
+.upgrade-menu .content .upgrades-wrapper .green-mods-con.mods-applied .columns.one .left-column .upgrade-toggles .toggle-wrapper .toggle .content-wrapper img {
+  width: 38px;
+  height: 46px;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con.mods-applied .columns.one .right-column .upgrade-toggles .toggle-wrapper .toggle .content-wrapper .mod-name,
+.upgrade-menu .content .upgrades-wrapper .green-mods-con.mods-applied .columns.one .left-column .upgrade-toggles .toggle-wrapper .toggle .content-wrapper .mod-name {
+  font-size: 12px;
+  text-overflow: unset;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con.mods-applied .columns .left-column p:first-child,
+.upgrade-menu .content .upgrades-wrapper .green-mods-con.mods-applied .columns .right-column p:first-child {
+  display: none;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con.mods-applied .columns .left-column {
+  border: none;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con.mods-applied .columns .left-column.hide {
+  display: none;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con.mods-applied .columns .right-column.hide {
+  display: none;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con.mods-applied .columns .upgrade-toggles .toggle-wrapper .toggle {
+  width: 140px;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con.mods-applied .columns .upgrade-toggles .toggle-wrapper .toggle .content-wrapper img {
+  width: 38px;
+  height: 46px;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con.mods-applied .columns .upgrade-toggles .toggle-wrapper .toggle .content-wrapper .mod-name {
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con .green-mod-title {
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con .columns {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con .columns .left-column,
+.upgrade-menu .content .upgrades-wrapper .green-mods-con .columns .right-column {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con .columns .left-column p:first-child,
+.upgrade-menu .content .upgrades-wrapper .green-mods-con .columns .right-column p:first-child {
+  font-size: 12px;
+  width: 100%;
+  text-align: left;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con .columns .left-column {
+  border-right: #808285 solid 1.5px;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con .columns .upgrade-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con .columns .upgrade-toggles .toggle-wrapper .toggle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  background-color: transparent;
+  white-space: nowrap;
+  transition: 0.3s ease-in-out background-color;
+  width: 165px;
+  height: 26px;
+  font-size: 0.9rem;
+  border: 1px solid #406324;
+  border-radius: 25px;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con .columns .upgrade-toggles .toggle-wrapper .toggle.disable {
+  cursor: default;
+  border-color: #6d6e71;
+  color: #6d6e71;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con .columns .upgrade-toggles .toggle-wrapper .toggle.hide {
+  display: none;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con .columns .upgrade-toggles .toggle-wrapper .toggle .content-wrapper {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  translate: -15px;
+  width: 185px;
+  font-size: 12px;
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con .columns .upgrade-toggles .toggle-wrapper .toggle .content-wrapper .mod-img {
+  width: 46px;
+  height: 38px;
+  object-fit: fill;
+  transform: translateY(-5px);
+}
+.upgrade-menu .content .upgrades-wrapper .green-mods-con .columns .upgrade-toggles .toggle-wrapper .toggle.active {
+  background-color: #4a7c4a;
+  color: white;
+}
+.upgrade-menu .content .details-wrapper {
+  flex: 1;
+  min-height: 100px;
+  height: auto;
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #fff;
+  overflow-y: auto;
+}
+.upgrade-menu .content .details-wrapper.ee {
+  min-height: unset;
+}
+.upgrade-menu .content .details-wrapper.ee .structure-details {
+  grid-template-rows: auto;
+}
+.upgrade-menu .content .details-wrapper.ee .structure-details div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.upgrade-menu .content .details-wrapper.ee .structure-details div button {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.upgrade-menu .content .details-wrapper .structure-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 4px;
+  font-size: 12px;
+}
+.upgrade-menu .content .details-wrapper .structure-details .power-mods-wrapper {
+  display: flex;
+  flex-direction: column;
+  /* Custom arrow and background */
+}
+.upgrade-menu .content .details-wrapper .structure-details .power-mods-wrapper .power-mods-title {
+  font-size: 12px;
+  font-weight: bold;
+}
+.upgrade-menu .content .details-wrapper .structure-details .power-mods-wrapper .power-mod-item {
+  margin-top: 0;
+}
+.upgrade-menu .content .details-wrapper .structure-details .power-mods-wrapper .custom-select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 80%;
+}
+.upgrade-menu .content .details-wrapper .structure-details .power-mods-wrapper .custom-select {
+  /* Remove native arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 18px;
+  /* Create space for the custom arrow */
+  width: 100%;
+  border: 1px solid #808285;
+  border-radius: 6px;
+  padding: 2px 4px;
+  background-color: white;
+  background-image: none;
+  /* Remove any default background image */
+  cursor: pointer;
+  font-size: 12px;
+}
+.upgrade-menu .content .details-wrapper .structure-details .power-mods-wrapper .custom-select-wrapper::after {
+  content: "\25BC";
+  /* Unicode character for down arrow */
+  position: absolute;
+  top: 50%;
+  right: 1px;
+  width: 18px;
+  height: 94%;
+  background-color: #6d6e71;
+  /* The grey background for the arrow area */
+  color: white;
+  /* Arrow color */
+  font-size: 0.7rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transform: translateY(-50%);
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.upgrade-menu .content .details-wrapper .structure-details .power-mods-wrapper .custom-select::-ms-expand {
+  display: none;
+  /* For Internet Explorer */
+}
+.upgrade-menu .content .details-wrapper .structure-details .post-lizards-lwl {
+  grid-column: 3/4;
+  grid-row: 1;
+}
+.upgrade-menu .content .details-wrapper .structure-details .post-lizards-lwl {
+  grid-column: 1/2;
+  grid-row: 1;
+}
+.upgrade-menu .content .details-wrapper .structure-details .post-tree-lwl {
+  grid-column: 1/2;
+  grid-row: 2;
+}
+.upgrade-menu .content .details-wrapper .structure-details .post-temp-lwl {
+  grid-column: 2/3;
+  grid-row: 2;
+}
+.upgrade-menu .content .details-wrapper .structure-details .post-water-lwl {
+  grid-column: 3/4;
+  grid-row: 2;
+}
+.upgrade-menu .content .details-wrapper .structure-details .energy-source-note-item.building-info {
+  grid-column: 2/4;
+  grid-row: 3;
+}
+.upgrade-menu .content .details-wrapper .structure-details .energy-source-note-item.building-info.ess {
+  grid-column: 1/4;
+}
+.upgrade-menu .content .details-wrapper .structure-details .energy-source-note-item.building-info .energy-source-note-text {
+  font-weight: normal;
+  color: #414042 !important;
+  margin: 5px 0 0 0;
+}
+.upgrade-menu .content .details-wrapper .structure-details .tax-details.ee {
+  grid-column: 3/4;
+  grid-row: 1;
+}
+.upgrade-menu .content .details-wrapper .structure-details .wastewater-grid-item {
+  grid-column: 1/4;
+  grid-row: 3;
+}
+.upgrade-menu .content .details-wrapper .structure-details .wastewater-grid-item.energy-present {
+  grid-column: 1/2;
+  grid-row: 3;
+}
+.upgrade-menu .content .details-wrapper .structure-details .wastewater-grid-item .wastewater-grid-text {
+  font-weight: normal;
+  color: #414042 !important;
+  margin: 5px 0 0 0;
+}
+.upgrade-menu .content .details-wrapper .structure-details .wastewater-grid-item .wastewater-grid-text p {
+  margin: 0;
+}
+.upgrade-menu .content .details-wrapper .structure-details .wastewater-grid-item .wastewater-grid-text p:first-child {
+  font-weight: normal;
+  color: #414042 !important;
+}
+.upgrade-menu .content .details-wrapper .structure-details .pollution-list {
+  padding: 0;
+  list-style-type: none;
+}
+.upgrade-menu .content .details-wrapper .structure-details .pollution-list li {
+  font-size: 12px;
+}
+.upgrade-menu .content .details-wrapper .structure-details .pollution-list li span {
+  margin-right: 0.15rem;
+}
+.upgrade-menu .content .details-wrapper .structure-details div {
+  font-weight: 500;
+}
+.upgrade-menu .content .details-wrapper .structure-details div p:first-child {
+  font-weight: bold;
+  color: #406325;
+}
+.upgrade-menu .content .details-wrapper .structure-details p {
+  margin: 5px 0;
+  font-size: 12px;
+}
+.upgrade-menu .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  border-top: 1px solid #ccc;
+  margin-top: 10px;
+  padding-top: 10px;
+  gap: 10px;
+}
+.upgrade-menu .footer.mods-applied {
+  justify-content: center;
+}
+.upgrade-menu .footer .info {
+  font-size: 12px;
+  flex: 1;
+  margin-right: 10px;
+}
+.upgrade-menu .footer.ee {
+  justify-content: flex-end;
+}
+.upgrade-menu .footer button {
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 8px 15px;
+}
+.upgrade-menu .footer button.build {
+  background-color: #406325;
+  color: white;
+}
+.upgrade-menu .footer button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.upgrade-menu.aag-info-modal {
+  max-width: 460px;
+  top: 20%;
+}
+.upgrade-menu.aag-info-modal .header .building-icon {
+  cursor: default;
+}
+.upgrade-menu.aag-info-modal.nature-info .header .title {
+  color: #2e8b57;
+}
+.upgrade-menu.aag-info-modal .footer {
+  border-top: none;
+  padding-top: 0;
+}

@@ -1,0 +1,128 @@
+@import url("variables.less");
+.modal-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+  pointer-events: all;
+  z-index: 100;
+}
+
+.modal {
+  min-width: min-content;
+  max-width: 650px;
+  min-height: fit-content;
+  max-height: 600px;
+  min-height: 260px;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 25px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  pointer-events: all;
+  z-index: 100;
+
+  .modal-header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .modal-header h2 {
+    position: absolute;
+    top: -60px;
+    height: 70px;
+    // left: 0;
+    width: fit-content;
+    border: solid 1px #4a6537;
+    border-radius: 40px;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding: 20px 40px;
+    text-transform: uppercase;
+  }
+
+  .modal-content {
+    // margin-top: 10px;
+    line-height: 1.5;
+    font-size: 1.3rem;
+    padding: 25px 0 25px 0;
+    display: flex;
+    flex-direction: column;
+
+    .modal-page {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      gap: 15px;
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      p {
+        text-align: center;
+      }
+    }
+  }
+  .modal-footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+
+    button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    .nav-btn {
+      height: 35px;
+      width: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url("/assets/ui/instructions-modal/arrow-normal.svg");
+      transition: all 0.1s ease-in-out;
+      &:hover {
+        background-image: url("/assets/ui/instructions-modal/arrow-hover.svg");
+      }
+      &:disabled {
+        background-image: url("/assets/ui/instructions-modal/arrow-disabled.svg");
+        cursor: auto;
+      }
+      &:active {
+        scale: 0.9;
+      }
+
+      &.prev {
+        transform: scaleX(-1);
+      }
+    }
+  }
+}
+
+// AAG Reset Modal
+.aag-reset-modal .modal {
+  min-height: 200px;
+  .modal-content {
+    padding: 20px;
+    text-align: center;
+  }
+}

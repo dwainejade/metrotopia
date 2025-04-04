@@ -1,0 +1,71 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #414042;
+}
+h1,
+h2,
+h3 {
+  font-family: 'Termina Heavy', sans-serif;
+}
+.nature-preserve h1,
+.residential h1,
+.nature-preserve h2,
+.residential h2,
+.nature-preserve h3,
+.residential h3 {
+  color: #006838;
+}
+.nature-preserve p,
+.residential p {
+  color: #006838;
+}
+.nature-preserve button,
+.residential button {
+  border-color: #92cfc4;
+}
+.nature-preserve button:hover,
+.residential button:hover {
+  background-color: #a6dbbe;
+}
+.commercial h1,
+.commercial h2,
+.commercial h3 {
+  color: #4c72b8;
+}
+.commercial p {
+  color: #4e72b0;
+}
+.commercial button {
+  border-color: #779de0;
+}
+.commercial button:hover {
+  background-color: #a1bef5;
+}
+.industrial h1,
+.industrial h2,
+.industrial h3 {
+  color: #8d5999;
+}
+.industrial p {
+  color: #784c82;
+}
+.industrial button {
+  border-color: #8d5999;
+}
+.industrial button:hover {
+  background-color: #d8aae3;
+}
+.services h1,
+.services h2,
+.services h3 {
+  color: #c78e67;
+}
+.services p {
+  color: #a8561e;
+}
+.services button {
+  border-color: #c78e67;
+}
+.services button:hover {
+  background-color: #dbb093;
+}

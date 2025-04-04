@@ -1,0 +1,538 @@
+@import url("./variables.less");
+@primary-color: #4a4a4a;
+@background-color: #f0f0f0;
+@button-bg: #ffffff;
+// @button-hover: #d0d0d0;
+@animation-duration: 0.3s;
+
+.top-right-menu {
+	background: @color-bg-light-gray;
+	border-radius: 25px;
+	padding: 5px;
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	display: flex;
+	gap: 4px;
+	pointer-events: auto;
+	color: @color-dark-green;
+	z-index: 10;
+
+	&.ess,
+	&.lwl {
+		width: 390px;
+		justify-content: space-between;
+	}
+
+	.btn {
+		background-color: transparent;
+		transition: all 0.15s ease-in-out;
+		svg {
+			opacity: 0.5;
+		}
+		img {
+			height: 23px;
+			width: 23px;
+		}
+
+		&.active {
+			background-color: white;
+			border-radius: 20px;
+			filter: drop-shadow(1px 1px 2px #acacac);
+		}
+	}
+
+	.expanded-menu {
+		position: absolute;
+		top: 48px;
+		right: 15px;
+		min-width: 256px;
+		width: 360px;
+		background-color: @color-bg-light-gray;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		pointer-events: auto;
+		padding: 0 8px;
+		overflow: hidden;
+		z-index: 10;
+
+		&.closed {
+			pointer-events: none;
+			opacity: 1;
+		}
+
+		.details-header {
+			width: 100%;
+			display: flex;
+			align-items: flex-start;
+			text-align: left;
+			justify-content: space-between;
+			gap: 6px;
+			border-bottom: 1px solid black;
+			padding: 1% 2%;
+			margin-bottom: 8px;
+
+			h2 {
+				font-size: 1.1rem;
+				font-weight: bolder;
+				margin: 0;
+				flex: 1;
+				padding: 0.5% 1%;
+			}
+
+			.toggle-chart-btn {
+				background-color: transparent;
+				height: 22px;
+				width: 22px;
+				background-image: url("../assets/top-right-menu/graph-button.svg");
+				&.active {
+					background-image: url("../assets/top-right-menu/graph-hover.svg");
+				}
+				&:hover {
+					background-image: url("../assets/top-right-menu/graph-normal.svg");
+				}
+			}
+
+			.add-btn {
+				display: flex;
+				align-items: center;
+				padding: 0;
+
+				&:hover {
+					background-color: unset;
+				}
+			}
+		}
+
+		.urbanization-pie-chart {
+			.top-category-details {
+				p {
+					text-align: left;
+
+					.category-label {
+						color: @color-dark-green;
+						font-weight: bold;
+					}
+				}
+			}
+		}
+
+		.bottom-categories {
+			margin-top: 10px;
+			gap: 4px;
+
+			&.nature,
+			&.urbanization {
+				margin-top: 10px;
+			}
+
+			.bottom-add-details {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				margin-top: 10px;
+
+				span {
+					color: @color-dark-green;
+					font-weight: bold;
+				}
+			}
+
+			&.pollution,
+			&.population-stats {
+				.top-category-details {
+					display: flex;
+					flex-direction: column;
+					// align-items: center;
+				}
+			}
+			&.wildlife-stats {
+				.top-category-details {
+					font-size: 0.95rem;
+				}
+			}
+
+			&.funding {
+				.top-category-details {
+					.category-label {
+						margin-right: 4px;
+					}
+
+					.conversion-note {
+						font-size: 0.85rem;
+					}
+				}
+			}
+
+			.top-category-details {
+				padding: 0 10px;
+				margin: 6px 0;
+				// text-align: center;
+
+				p {
+					font-weight: 500;
+					&:not(:first-child) {
+						margin-top: 2px;
+					}
+
+					.category-label {
+						color: @color-dark-green;
+						font-weight: bold;
+					}
+				}
+			}
+
+			.bottom-checklist {
+				padding: 10px;
+				border-radius: 10px;
+				background-color: #fff;
+
+				.bottom-label {
+					color: @color-dark-green;
+					font-weight: bold;
+				}
+
+				p {
+					display: flex;
+					align-items: center;
+					gap: 6px;
+					font-weight: 500;
+
+					.bottom-label {
+						color: @color-dark-green;
+						font-weight: bold;
+					}
+
+					.category-check {
+						svg {
+							border: 1px solid @primary-color;
+						}
+					}
+				}
+
+				&.population {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					grid-template-rows: 1fr auto;
+					gap: 6px;
+
+					p {
+						display: flex;
+						flex-direction: column;
+						align-items: flex-start;
+						font-size: 16px;
+					}
+				}
+
+				&.wildlife {
+					.category-label.lwl {
+						text-align: left;
+						font-weight: bold;
+						color: @color-dark-green;
+						flex: 30%;
+					}
+					p {
+						font-size: 0.94rem;
+						&:not(:last-child) {
+							margin-bottom: 5px;
+						}
+
+						span {
+							flex: 1;
+							text-align: right;
+
+							.wildlife-stat-count {
+								margin-right: 4px;
+								font-size: 0.9rem;
+							}
+							.wildlife-stat-percent {
+								color: #000;
+								font-size: 0.94rem;
+							}
+						}
+					}
+				}
+
+				&.urbanization,
+				&.energy,
+				&.water,
+				&.pollution {
+					display: grid;
+					grid-template-columns: repeat(2, 1fr);
+					grid-template-rows: repeat(3, auto);
+					gap: 8px;
+
+					p {
+						display: flex;
+						flex-direction: column;
+						align-items: flex-start;
+						color: black;
+						margin: 0;
+
+						span:first-child {
+							flex-grow: 1;
+						}
+
+						&.add-details {
+							font-size: 0.95rem;
+							color: @primary-color;
+						}
+
+						&.cars-row {
+							grid-column: 1/-1;
+						}
+					}
+				}
+
+				&.nature {
+					background-color: @background-color;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					gap: 6px;
+					padding: 0;
+
+					.nature-tree-preserve {
+						display: flex;
+						justify-content: center;
+						width: 100%;
+						margin: 0 auto;
+						margin-top: 4px;
+						font-weight: 500;
+						color: @primary-color;
+
+						.category-label {
+							color: @color-dark-green;
+							font-weight: bold;
+						}
+					}
+
+					.nature-stats {
+						padding: 10px;
+						border-radius: 10px;
+						background-color: #fff;
+						display: grid;
+						grid-template-columns: repeat(2, 1fr);
+						grid-template-rows: repeat(2, auto);
+						gap: 6px 10px;
+
+						p {
+							display: flex;
+							flex-direction: column;
+							align-items: flex-start;
+							color: #000;
+							margin: 0;
+
+							span:first-child {
+								flex-grow: 1;
+							}
+						}
+					}
+				}
+
+				&.urbanization {
+					display: flex;
+					flex-direction: column;
+					h3 {
+						text-align: center;
+						font-size: 1.1rem;
+					}
+					.details-grid {
+						justify-content: space-between;
+						display: grid;
+						grid-template-columns: 1fr 1fr;
+						grid-template-rows: auto auto;
+						gap: 8px;
+
+						.bottom-label {
+							font-size: 0.9rem;
+
+							.urban-percent {
+								color: @primary-color;
+								font-weight: 600;
+							}
+						}
+					}
+				}
+
+				&.pollution {
+					margin-top: 8px;
+
+					.pollution-note {
+						grid-column: 1 / -1;
+						font-weight: normal;
+						font-size: 0.9rem;
+						color: black;
+						margin: 3px 0;
+					}
+				}
+
+				&.funding {
+					margin-top: 8px;
+
+					h3 {
+						text-align: center;
+						margin-bottom: 8px;
+					}
+					.funding-grid-details {
+						display: grid;
+						grid-template-columns: 1fr 1fr;
+						grid-template-rows: auto auto;
+						gap: 8px;
+
+						p {
+							display: flex;
+							flex-direction: column;
+							align-items: flex-start;
+							margin: 0;
+						}
+
+						.funding-note {
+							grid-column: 1 / -1;
+							margin: 3px 0;
+						}
+					}
+				}
+
+				&.energy {
+					background-color: transparent !important;
+					p {
+						&.clickable {
+							background-color: #fff;
+							border-radius: 10px;
+							padding: 10px;
+							cursor: pointer;
+						}
+						&.clickable:hover {
+							background-color: #d0d0d0;
+						}
+						&:not(.clickable) {
+							pointer-events: none;
+						}
+						&.active {
+							background-color: #e6b466;
+						}
+						span {
+							user-select: none;
+						}
+					}
+				}
+			}
+
+			&.energy {
+				.bottom-energy-note {
+					padding: 0 8px;
+					font-size: 0.9rem;
+				}
+			}
+
+			&.urbanization {
+				.bottom-urbanization-note {
+					padding: 0 8px;
+					margin-top: 8px;
+					font-size: 0.9rem;
+				}
+			}
+
+			&.water {
+				.bottom-label {
+					font-size: 0.9rem;
+				}
+			}
+
+			.bottom-funding-details {
+				margin: 8px 4px 0;
+				display: flex;
+				justify-content: space-between;
+				font-size: 1.1rem;
+				color: black;
+				font-weight: 500;
+
+				.bottom-label {
+					color: @color-dark-green;
+					font-weight: 700;
+				}
+			}
+		}
+
+		p {
+			color: @primary-color;
+		}
+	}
+}
+
+.win-conditions-container {
+	.bottom-checklist {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+
+		.primary-goals,
+		.secondary-goals {
+			padding: 4px;
+			background-color: #f9f9f9;
+			border-radius: 8px;
+		}
+
+		h4 {
+			text-align: center;
+			margin-bottom: 4px;
+
+			.secondary-title {
+				margin-top: 4px;
+			}
+		}
+
+		.population-goal-note,
+		.secondary-goal-note {
+			padding: 4px;
+			font-size: 13px;
+			// font-style: italic;
+		}
+
+		.divider {
+			border-bottom: 1px solid #000;
+		}
+
+		.condition-item {
+			display: flex;
+			align-items: center;
+			padding: 4px;
+			border-radius: 10px;
+			cursor: pointer;
+
+			&:hover {
+				background-color: #ececec;
+
+				.condition-label {
+					color: #ffab2e;
+				}
+			}
+
+			.condition-icon {
+				margin-right: 10px;
+				display: flex;
+				align-items: center;
+			}
+
+			.condition-details {
+				display: flex;
+				flex-direction: column;
+
+				.condition-label {
+					font-weight: bold;
+					margin: 0;
+					font-size: 16px;
+				}
+
+				.condition-values {
+					margin: 0;
+					font-size: 14px;
+					color: #555;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,104 @@
+@import "variables.less";
+
+.neighboring-popup-container {
+	width: 300px;
+	height: auto;
+	position: relative;
+	background: rgba(255, 255, 255, 0.8);
+	backdrop-filter: blur(3px);
+	padding: 10px;
+	border-radius: 10px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+		Arial, sans-serif;
+	cursor: pointer;
+	z-index: 1;
+	transition: transform 0.2s ease-out, opacity 0.15s ease-out;
+	transform: scale(0);
+	opacity: 0;
+
+	&.open {
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	&.north,
+	&.west {
+		/* Centered top arrow */
+		transform-origin: top center;
+		&::after {
+			content: "";
+			position: absolute;
+			top: -20px; /* Positioning the arrow below the popup */
+			left: 50%;
+			transform: translateX(-50%); /* Centers the arrow horizontally */
+
+			/* Create a triangle for the arrow */
+			border-width: 15px 10px 5px 10px;
+			border-style: solid;
+			border-color: rgba(255, 255, 255, 0.8) transparent transparent transparent;
+			transform: rotate(180deg);
+		}
+	}
+
+	&.south,
+	&.east {
+		/* Centered bottom arrow */
+		transform-origin: bottom center;
+
+		&::after {
+			content: "";
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%); /* Centers the arrow horizontally */
+
+			/* Create a triangle for the arrow */
+			border-width: 15px 10px 5px 10px;
+			border-style: solid;
+			border-color: rgba(255, 255, 255, 0.8) transparent transparent transparent;
+			bottom: -20px; /* Positioning the arrow below the popup */
+			transform: rotate(0deg);
+		}
+	}
+
+	.neighboring-popup-header {
+		color: @color-dark-green;
+		font-weight: 900;
+		margin: 0 0 10px 0;
+		text-align: center;
+		font-size: 1.2rem;
+	}
+
+	.neighboring-popup-details {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+		background-color: #fff;
+		border-radius: 10px;
+		padding: 6px;
+
+		img {
+			height: 20px;
+			width: 20px;
+		}
+		p {
+			margin: 0;
+			display: flex;
+			align-items: center;
+			gap: 6px;
+
+			&.no-access-text {
+				padding-left: 26px;
+			}
+
+			&.neighbor-note {
+				font-size: 0.9rem;
+				font-style: italic;
+				padding-left: 26px;
+			}
+		}
+
+		.divider {
+			border-bottom: 1px solid black;
+		}
+	}
+}

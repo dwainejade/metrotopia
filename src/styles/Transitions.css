@@ -1,0 +1,50 @@
+.grid-transition {
+  --row-count: 5; /* Default value, will be set dynamically */
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1300px;
+  max-height: 800px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* Create a wrapper for the row to handle the centering transform */
+.grid-transition .row-wrapper {
+  width: 100%;
+  height: calc(100% / var(--row-count));
+}
+
+.grid-transition .row {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.grid-transition.active,
+.grid-transition.reverse-active {
+  visibility: visible;
+}
+
+.grid-transition.active .row {
+  transform: scaleX(1);
+}
+
+.grid-transition.reverse .row {
+  transform-origin: right;
+}
+
+.grid-transition.reverse-active .row {
+  transform: scaleX(0);
+}
+
+/* The delay CSS will be generated dynamically */

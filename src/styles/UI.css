@@ -1,0 +1,336 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #414042;
+}
+h1,
+h2,
+h3 {
+  font-family: 'Termina Heavy', sans-serif;
+}
+.nature-preserve h1,
+.residential h1,
+.nature-preserve h2,
+.residential h2,
+.nature-preserve h3,
+.residential h3 {
+  color: #006838;
+}
+.nature-preserve p,
+.residential p {
+  color: #006838;
+}
+.nature-preserve button,
+.residential button {
+  border-color: #92cfc4;
+}
+.nature-preserve button:hover,
+.residential button:hover {
+  background-color: #a6dbbe;
+}
+.commercial h1,
+.commercial h2,
+.commercial h3 {
+  color: #4c72b8;
+}
+.commercial p {
+  color: #4e72b0;
+}
+.commercial button {
+  border-color: #779de0;
+}
+.commercial button:hover {
+  background-color: #a1bef5;
+}
+.industrial h1,
+.industrial h2,
+.industrial h3 {
+  color: #8d5999;
+}
+.industrial p {
+  color: #784c82;
+}
+.industrial button {
+  border-color: #8d5999;
+}
+.industrial button:hover {
+  background-color: #d8aae3;
+}
+.services h1,
+.services h2,
+.services h3 {
+  color: #c78e67;
+}
+.services p {
+  color: #a8561e;
+}
+.services button {
+  border-color: #c78e67;
+}
+.services button:hover {
+  background-color: #dbb093;
+}
+.ecometropolis-ui {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none;
+  overflow: hidden;
+}
+.ecometropolis-ui button {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  pointer-events: auto;
+}
+.ecometropolis-ui .top-left-controls {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+.ecometropolis-ui .top-left-controls button {
+  background: transparent;
+  border: none;
+  width: 33px;
+  height: 33px;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+.ecometropolis-ui .top-left-controls button img {
+  width: 100%;
+  pointer-events: none;
+}
+.ecometropolis-ui .top-left-controls button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.ecometropolis-ui .top-left-controls button:active {
+  transform: scale(0.95);
+}
+.ecometropolis-ui .top-left-controls button.reset {
+  background-image: url("/assets/ui/upper-left-buttons/reset-normal.svg");
+}
+.ecometropolis-ui .top-left-controls button.reset:hover {
+  background-image: url("/assets/ui/upper-left-buttons/reset-hover.svg");
+}
+.ecometropolis-ui .top-left-controls button.reset.active {
+  background-image: url("/assets/ui/upper-left-buttons/reset-onclick.svg");
+}
+.ecometropolis-ui .top-left-controls button.music {
+  background-image: url("/assets/ui/upper-left-buttons/music-normal.svg");
+}
+.ecometropolis-ui .top-left-controls button.music:hover {
+  background-image: url("/assets/ui/upper-left-buttons/music-hover.svg");
+}
+.ecometropolis-ui .top-left-controls button.music.active {
+  background-image: url("/assets/ui/upper-left-buttons/music-onclick.svg");
+}
+.ecometropolis-ui .top-left-controls button.music.muted,
+.ecometropolis-ui .top-left-controls button.music.not-playing {
+  background-image: url("/assets/ui/upper-left-buttons/mutemusic-normal.svg");
+}
+.ecometropolis-ui .top-left-controls button.music.muted:hover,
+.ecometropolis-ui .top-left-controls button.music.not-playing:hover {
+  background-image: url("/assets/ui/upper-left-buttons/mutemusic-hover.svg");
+}
+.ecometropolis-ui .top-left-controls button.music.muted.active,
+.ecometropolis-ui .top-left-controls button.music.not-playing.active {
+  background-image: url("/assets/ui/upper-left-buttons/mutemusic-onclick.svg");
+}
+.ecometropolis-ui .top-left-controls button.sound {
+  background-image: url("/assets/ui/upper-left-buttons/mutesound-normal.svg");
+}
+.ecometropolis-ui .top-left-controls button.sound:hover {
+  background-image: url("/assets/ui/upper-left-buttons/mutesound-hover.svg");
+}
+.ecometropolis-ui .top-left-controls button.sound.active {
+  background-image: url("/assets/ui/upper-left-buttons/mutesound-onclick.svg");
+}
+.ecometropolis-ui .top-left-controls button.sound.unmuted {
+  background-image: url("/assets/ui/upper-left-buttons/sound-normal.svg");
+}
+.ecometropolis-ui .top-left-controls button.sound.unmuted:hover {
+  background-image: url("/assets/ui/upper-left-buttons/sound-hover.svg");
+}
+.ecometropolis-ui .top-left-controls button.sound.unmuted.active {
+  background-image: url("/assets/ui/upper-left-buttons/sound-onclick.svg");
+}
+.ecometropolis-ui .top-left-controls button.info {
+  background-image: url("/assets/ui/upper-left-buttons/info-normal.svg");
+}
+.ecometropolis-ui .top-left-controls button.info:hover {
+  background-image: url("/assets/ui/upper-left-buttons/info-hover.svg");
+}
+.ecometropolis-ui .top-left-controls button.info.active {
+  background-image: url("/assets/ui/upper-left-buttons/info-onclick.svg");
+}
+.ecometropolis-ui .top-left-controls button.dev {
+  background-color: #4a5568;
+  color: white;
+  border-radius: 4px;
+}
+.ecometropolis-ui .top-left-controls button.dev:hover {
+  background-color: #2d3748;
+}
+.ecometropolis-ui .directional-arrows button {
+  position: absolute;
+}
+.ecometropolis-ui .directional-arrows button.left {
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+}
+.ecometropolis-ui .directional-arrows button.right {
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+}
+.ecometropolis-ui .directional-arrows button.up {
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.ecometropolis-ui .directional-arrows button.down {
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.ecometropolis-ui .bottom-center-menu {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+}
+.ecometropolis-ui .bottom-center-menu .object-details h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+.ecometropolis-ui .bottom-center-menu .object-details p {
+  margin: 4px 0;
+}
+.ecometropolis-ui .bottom-center-menu .object-details ul {
+  margin: 4px 0;
+  padding-left: 20px;
+}
+.camera-controls-ui {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.camera-controls-ui .zoom-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.camera-controls-ui .zoom-controls .zoom-in-btn {
+  background-image: url("../assets/camera-controls/zoom-in-normal.svg");
+}
+.camera-controls-ui .zoom-controls .zoom-in-btn:active {
+  background-image: url("../assets/camera-controls/zoom-in-onclick.svg");
+}
+.camera-controls-ui .zoom-controls .zoom-in-btn:disabled {
+  background-image: url("../assets/camera-controls/zoom-in-disabled.svg");
+}
+.camera-controls-ui .zoom-controls .zoom-out-btn {
+  background-image: url("../assets/camera-controls/zoom-out-normal.svg");
+}
+.camera-controls-ui .zoom-controls .zoom-out-btn:active {
+  background-image: url("../assets/camera-controls/zoom-out-onclick.svg");
+}
+.camera-controls-ui .zoom-controls .zoom-out-btn:disabled {
+  background-image: url("../assets/camera-controls/zoom-out-disabled.svg");
+}
+.camera-controls-ui .pan-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.camera-controls-ui .pan-controls .arrow-up {
+  background-image: url("../assets/camera-controls/up-normal.svg");
+}
+.camera-controls-ui .pan-controls .arrow-up:active {
+  background-image: url("../assets/camera-controls/up-onclick.svg");
+}
+.camera-controls-ui .pan-controls .arrow-up:disabled {
+  background-image: url("../assets/camera-controls/up-disabled.svg");
+}
+.camera-controls-ui .pan-controls .arrow-down {
+  background-image: url("../assets/camera-controls/down-normal.svg");
+}
+.camera-controls-ui .pan-controls .arrow-down:active {
+  background-image: url("../assets/camera-controls/down-onclick.svg");
+}
+.camera-controls-ui .pan-controls .arrow-down:disabled {
+  background-image: url("../assets/camera-controls/down-disabled.svg");
+}
+.camera-controls-ui .pan-controls .middle-con {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.camera-controls-ui .pan-controls .middle-con .center {
+  background-image: url("../assets/camera-controls/center-normal.svg");
+}
+.camera-controls-ui .pan-controls .middle-con .center:active {
+  background-image: url("../assets/camera-controls/center-onclick.svg");
+}
+.camera-controls-ui .pan-controls .middle-con .center:disabled {
+  background-image: url("../assets/camera-controls/center-disabled.svg");
+}
+.camera-controls-ui .pan-controls .middle-con .arrow-left {
+  background-image: url("../assets/camera-controls/left-normal.svg");
+}
+.camera-controls-ui .pan-controls .middle-con .arrow-left:active {
+  background-image: url("../assets/camera-controls/left-onclick.svg");
+}
+.camera-controls-ui .pan-controls .middle-con .arrow-left:disabled {
+  background-image: url("../assets/camera-controls/left-disabled.svg");
+}
+.camera-controls-ui .pan-controls .middle-con .arrow-right {
+  background-image: url("../assets/camera-controls/right-normal.svg");
+}
+.camera-controls-ui .pan-controls .middle-con .arrow-right:active {
+  background-image: url("../assets/camera-controls/right-onclick.svg");
+}
+.camera-controls-ui .pan-controls .middle-con .arrow-right:disabled {
+  background-image: url("../assets/camera-controls/right-disabled.svg");
+}
+.camera-controls-ui button {
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.camera-controls-ui button:disabled {
+  opacity: 0.5;
+  cursor: auto;
+}

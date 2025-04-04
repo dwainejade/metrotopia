@@ -1,0 +1,113 @@
+@import url("variables.less");
+.modal-wrapper.instructions-modal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(5px);
+	background-color: rgba(0, 0, 0, 0.5);
+	transition: all 0.3s ease-in-out;
+	pointer-events: all;
+	z-index: 100;
+
+	.modal {
+		width: 98%;
+		max-width: 700px;
+		min-height: 400px;
+		max-height: 600px;
+		border-radius: 30px;
+		background-color: rgba(255, 255, 255, 0.88);
+		padding: 2%;
+		font-family: Arial, sans-serif;
+		font-size: 16px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		pointer-events: all;
+
+		.modal-header {
+			position: relative;
+			display: flex;
+			justify-content: center;
+		}
+
+		.modal-header h2 {
+			position: absolute;
+			top: -60px;
+			height: fit-content;
+			text-align: center;
+			color: #fff;
+			font-size: 1.4rem;
+		}
+
+		.modal-content {
+			margin-top: 10px;
+			line-height: 1.5;
+			font-size: 16px;
+			display: flex;
+			flex-direction: column;
+			padding: 15px 0;
+
+			.modal-page {
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-evenly;
+				gap: 10px;
+
+				li {
+					margin-bottom: 10px;
+				}
+
+				p {
+					text-align: center;
+				}
+			}
+		}
+		.modal-footer {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			button {
+				border: none;
+				background-color: transparent;
+				cursor: pointer;
+				&:hover {
+					background-color: transparent;
+				}
+				&:disabled {
+					pointer-events: none;
+				}
+			}
+
+			.nav-btn {
+				height: 35px;
+				width: 40px;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-image: url("/assets/ui/instructions-modal/arrow-normal.svg");
+				transition: all 0.1s ease-in-out;
+				&:hover {
+					background-image: url("/assets/ui/instructions-modal/arrow-hover.svg");
+				}
+				&:disabled {
+					background-image: url("/assets/ui/instructions-modal/arrow-disabled.svg");
+					cursor: auto;
+				}
+				&:active {
+					scale: 0.9;
+				}
+
+				&.prev {
+					transform: scaleX(-1);
+				}
+			}
+		}
+	}
+}

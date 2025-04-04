@@ -1,0 +1,194 @@
+/* Reset and Normalize */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+img,
+picture,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* Your existing styles */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #414042;
+}
+h1,
+h2,
+h3 {
+  font-family: 'Termina Heavy', sans-serif;
+}
+.nature-preserve h1,
+.residential h1,
+.nature-preserve h2,
+.residential h2,
+.nature-preserve h3,
+.residential h3 {
+  color: #006838;
+}
+.nature-preserve p,
+.residential p {
+  color: #006838;
+}
+.nature-preserve button,
+.residential button {
+  border-color: #92cfc4;
+}
+.nature-preserve button:hover,
+.residential button:hover {
+  background-color: #a6dbbe;
+}
+.commercial h1,
+.commercial h2,
+.commercial h3 {
+  color: #4c72b8;
+}
+.commercial p {
+  color: #4e72b0;
+}
+.commercial button {
+  border-color: #779de0;
+}
+.commercial button:hover {
+  background-color: #a1bef5;
+}
+.industrial h1,
+.industrial h2,
+.industrial h3 {
+  color: #8d5999;
+}
+.industrial p {
+  color: #784c82;
+}
+.industrial button {
+  border-color: #8d5999;
+}
+.industrial button:hover {
+  background-color: #d8aae3;
+}
+.services h1,
+.services h2,
+.services h3 {
+  color: #c78e67;
+}
+.services p {
+  color: #a8561e;
+}
+.services button {
+  border-color: #c78e67;
+}
+.services button:hover {
+  background-color: #dbb093;
+}
+.sky-gradient-00,
+.sky-gradient-24 {
+  background: #00000c;
+}
+.sky-gradient-01 {
+  background: linear-gradient(to top, #020111 85%, #191621 100%);
+}
+.sky-gradient-02 {
+  background: linear-gradient(to top, #020111 60%, #20202c 100%);
+}
+.sky-gradient-03 {
+  background: linear-gradient(to top, #020111 10%, #3a3a52 100%);
+}
+.sky-gradient-04 {
+  background: linear-gradient(to top, #20202c 0%, #515175 100%);
+}
+.sky-gradient-05 {
+  background: linear-gradient(to top, #40405c 0%, #6f71aa 80%, #8a76ab 100%);
+}
+.sky-gradient-06 {
+  background: linear-gradient(to top, #4a4969 0%, #7072ab 50%, #cd82a0 100%);
+}
+.sky-gradient-07 {
+  background: linear-gradient(to top, #757abf 0%, #8583be 60%, #eab0d1 100%);
+}
+.sky-gradient-08 {
+  background: linear-gradient(to top, #82addb 0%, #ebb2b1 100%);
+}
+.sky-gradient-09 {
+  background: linear-gradient(to top, #94c5f8 1%, #a6e6ff 70%, #b1b5ea 100%);
+}
+.sky-gradient-10 {
+  background: linear-gradient(to top, #b7eaff 0%, #94dfff 100%);
+}
+.sky-gradient-11 {
+  background: linear-gradient(to top, #9be2fe 0%, #67d1fb 100%);
+}
+.sky-gradient-12 {
+  background: linear-gradient(to top, #90dffe 0%, #38a3d1 100%);
+}
+.sky-gradient-13 {
+  background: linear-gradient(to top, #57c1eb 0%, #246fa8 100%);
+}
+.sky-gradient-14 {
+  background: linear-gradient(to top, #2d91c2 0%, #1e528e 100%);
+}
+.sky-gradient-15 {
+  background: linear-gradient(to top, #2473ab 0%, #1e528e 70%, #5b7983 100%);
+}
+.sky-gradient-16 {
+  background: linear-gradient(to top, #1e528e 0%, #265889 50%, #9da671 100%);
+}
+.sky-gradient-17 {
+  background: linear-gradient(to top, #1e528e 0%, #728a7c 50%, #e9ce5d 100%);
+}
+.sky-gradient-18 {
+  background: linear-gradient(to top, #154277 0%, #576e71 30%, #e1c45e 70%, #b26339 100%);
+}
+.sky-gradient-19 {
+  background: linear-gradient(to top, #163c52 0%, #4f4f47 30%, #c5752d 60%, #b7490f 80%, #2f1107 100%);
+}
+.sky-gradient-20 {
+  background: linear-gradient(to top, #071b26 0%, #071b26 30%, #8a3b12 80%, #240e03 100%);
+}
+.sky-gradient-21 {
+  background: linear-gradient(to top, #010a10 30%, #59230b 80%, #2f1107 100%);
+}
+.sky-gradient-22 {
+  background: linear-gradient(to top, #090401 50%, #4b1d06 100%);
+}
+.sky-gradient-23 {
+  background: linear-gradient(to top, #00000c 80%, #150800 100%);
+}
+.Main {
+  width: 100%;
+  max-width: 1300px;
+  height: 100dvh;
+  min-height: 700px;
+  max-height: 800px;
+  position: relative;
+  margin: 0 auto;
+}
+#canvas {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #95d5e7 1%, #a6e6ff 70%);
+}
+.stats {
+  margin-top: calc(100vh - 55px);
+  margin-left: 5px;
+}

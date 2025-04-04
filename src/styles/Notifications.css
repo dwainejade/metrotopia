@@ -1,0 +1,33 @@
+.notification-system {
+  position: fixed;
+  top: 20px;
+  width: 300px;
+  z-index: 1000;
+}
+.notification {
+  background-color: #f8f8f8;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  padding: 15px;
+  position: relative;
+}
+.notification.suggestion {
+  border-left: 4px solid #3498db;
+}
+.notification.warning {
+  border-left: 4px solid #f39c12;
+}
+.notification button {
+  background: none;
+  border: none;
+  color: #777;
+  cursor: pointer;
+  font-size: 18px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.notification button:hover {
+  color: #333;
+}

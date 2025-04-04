@@ -1,0 +1,9 @@
+.tippy-box {
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.tippy-arrow {
+  color: #333;
+}

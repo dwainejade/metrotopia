@@ -1,0 +1,514 @@
+// EcoMetropolisUI.less
+@import "variables.less";
+
+@primary-color: #4a4a4a;
+@background-color: #f0f0f0;
+@button-bg: #ffffff;
+@button-hover: #d0d0d0;
+@animation-duration: 0.3s;
+
+.ecometropolis-ui {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  pointer-events: none;
+  overflow: hidden;
+
+  button {
+    background-color: @button-bg;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    pointer-events: auto;
+  }
+
+  .top-left-controls {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+
+    button {
+      background: transparent;
+      border: none;
+      width: 33px;
+      height: 33px;
+      padding: 0;
+      cursor: pointer;
+      transition: transform 0.1s;
+
+      img {
+        width: 100%;
+        pointer-events: none;
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+
+      // Reset button
+      &.reset {
+        background-image: url("/assets/ui/upper-left-buttons/reset-normal.svg");
+
+        &:hover {
+          background-image: url("/assets/ui/upper-left-buttons/reset-hover.svg");
+        }
+
+        &.active {
+          background-image: url("/assets/ui/upper-left-buttons/reset-onclick.svg");
+        }
+      }
+
+      // Music button
+      &.music {
+        background-image: url("/assets/ui/upper-left-buttons/music-normal.svg");
+        &:hover {
+          background-image: url("/assets/ui/upper-left-buttons/music-hover.svg");
+        }
+        &.active {
+          background-image: url("/assets/ui/upper-left-buttons/music-onclick.svg");
+        }
+
+        &.muted,
+        &.not-playing {
+          background-image: url("/assets/ui/upper-left-buttons/mutemusic-normal.svg");
+          &:hover {
+            background-image: url("/assets/ui/upper-left-buttons/mutemusic-hover.svg");
+          }
+          &.active {
+            background-image: url("/assets/ui/upper-left-buttons/mutemusic-onclick.svg");
+          }
+        }
+      }
+
+      // Sound button
+      &.sound {
+        background-image: url("/assets/ui/upper-left-buttons/mutesound-normal.svg");
+        &:hover {
+          background-image: url("/assets/ui/upper-left-buttons/mutesound-hover.svg");
+        }
+        &.active {
+          background-image: url("/assets/ui/upper-left-buttons/mutesound-onclick.svg");
+        }
+
+        &.unmuted {
+          background-image: url("/assets/ui/upper-left-buttons/sound-normal.svg");
+          &:hover {
+            background-image: url("/assets/ui/upper-left-buttons/sound-hover.svg");
+          }
+          &.active {
+            background-image: url("/assets/ui/upper-left-buttons/sound-onclick.svg");
+          }
+        }
+      }
+
+      // Info button
+      &.info {
+        background-image: url("/assets/ui/upper-left-buttons/info-normal.svg");
+
+        &:hover {
+          background-image: url("/assets/ui/upper-left-buttons/info-hover.svg");
+        }
+
+        &.active {
+          background-image: url("/assets/ui/upper-left-buttons/info-onclick.svg");
+        }
+      }
+
+      // Dev mode buttons
+      &.dev {
+        background-color: #4a5568;
+        color: white;
+        border-radius: 4px;
+
+        &:hover {
+          background-color: #2d3748;
+        }
+      }
+    }
+  }
+
+  .directional-arrows {
+    button {
+      position: absolute;
+
+      &.left {
+        top: 50%;
+        left: 16px;
+        transform: translateY(-50%);
+      }
+
+      &.right {
+        top: 50%;
+        right: 16px;
+        transform: translateY(-50%);
+      }
+
+      &.up {
+        top: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &.down {
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  // .top-right-menu {
+  //   background: @color-bg-light-gray;
+  //   border-radius: 25px;
+  //   padding: 5px;
+  //   position: absolute;
+  //   top: 16px;
+  //   right: 16px;
+  //   display: flex;
+  //   gap: 4px;
+  //   pointer-events: auto;
+  //   color: @color-dark-green;
+
+  //   .btn {
+  //     background-color: transparent;
+  //     transition: all 0.15s ease-in-out;
+  //     svg {
+  //       opacity: 0.5;
+  //     }
+  //     img {
+  //       height: 23px;
+  //       width: 23px;
+  //     }
+
+  //     &.active {
+  //       background-color: white;
+  //       border-radius: 20px;
+  //     }
+  //   }
+
+  //   .expanded-menu {
+  //     position: absolute;
+  //     top: 48px;
+  //     right: 15px;
+  //     min-width: 256px;
+  //     width: 360px;
+  //     background-color: @color-bg-light-gray;
+  //     border-bottom-left-radius: 10px;
+  //     border-bottom-right-radius: 10px;
+  //     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  //     pointer-events: auto;
+  //     padding: 0 8px;
+  //     overflow: hidden;
+  //     z-index: 100;
+
+  //     &.closed {
+  //       pointer-events: none;
+  //       opacity: 1;
+  //     }
+
+  //     .details-header {
+  //       display: flex;
+  //       align-items: center;
+  //       justify-content: center;
+  //       gap: 6px;
+  //       border-bottom: 1px solid black;
+  //       margin-bottom: 8px;
+
+  //       h2 {
+  //         font-size: 1.1rem;
+  //         font-weight: bold;
+  //         text-align: center;
+  //         margin: 6px 0;
+  //       }
+
+  //       .toggle-chart-btn {
+  //         background-color: transparent;
+  //         height: 20px;
+  //         width: 20px;
+  //         background-image: url("../assets/top-right-menu/graph-normal.svg");
+
+  //         &:hover,
+  //         &.active {
+  //           background-image: url("../assets/top-right-menu/graph-hover.svg");
+  //         }
+  //       }
+
+  //       .add-btn {
+  //         display: flex;
+  //         align-items: center;
+  //         padding: 0;
+
+  //         &:hover {
+  //           background-color: unset;
+  //         }
+  //       }
+  //     }
+
+  //     .bottom-categories {
+  //       margin-top: 10px;
+  //       gap: 4px;
+
+  //       &.nature,
+  //       &.urbanization {
+  //         margin-top: 10px;
+  //       }
+
+  //       .bottom-add-details {
+  //         display: flex;
+  //         flex-direction: column;
+  //         justify-content: center;
+  //         align-items: center;
+  //         margin-top: 10px;
+
+  //         span {
+  //           color: @color-dark-green;
+  //           font-weight: bold;
+  //         }
+  //       }
+
+  //       &.pollution,
+  //       &.population {
+  //         .top-category-details {
+  //           display: flex;
+  //           flex-direction: column;
+  //           align-items: center;
+  //         }
+  //       }
+  //       &.wildlife-stats {
+  //         .top-category-details {
+  //           font-size: 0.95rem;
+  //         }
+  //       }
+
+  //       &.funding {
+  //         .top-category-details {
+  //           .category-label {
+  //             margin-right: 4px;
+  //           }
+
+  //           .conversion-note {
+  //             font-size: 0.85rem;
+  //           }
+  //         }
+  //       }
+
+  //       .top-category-details {
+  //         padding: 0 10px;
+  //         margin: 6px 0;
+  //         text-align: center;
+
+  //         p {
+  //           font-weight: 500;
+  //           &:not(:first-child) {
+  //             margin-top: 2px;
+  //           }
+
+  //           .category-label {
+  //             color: @color-dark-green;
+  //             font-weight: bold;
+  //           }
+  //         }
+
+  //         .urbanization-note {
+  //           font-size: 0.9rem;
+  //         }
+  //       }
+
+  //       &.water {
+  //         .bottom-label {
+  //           font-size: 0.9rem;
+  //         }
+  //       }
+
+  //       .bottom-funding-details {
+  //         margin: 8px 4px 0;
+  //         display: flex;
+  //         justify-content: space-between;
+  //         font-size: 1.1rem;
+  //         color: black;
+  //         font-weight: 500;
+
+  //         .bottom-label {
+  //           color: @color-dark-green;
+  //           font-weight: 700;
+  //         }
+  //       }
+  //     }
+
+  //     p {
+  //       color: @primary-color;
+  //     }
+  //   }
+  // }
+
+  .bottom-center-menu {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+
+    .object-details {
+      h2 {
+        margin-top: 0;
+        margin-bottom: 8px;
+      }
+
+      p {
+        margin: 4px 0;
+      }
+
+      ul {
+        margin: 4px 0;
+        padding-left: 20px;
+      }
+    }
+  }
+}
+
+.camera-controls-ui {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+
+  .zoom-controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+    .zoom-in-btn {
+      background-image: url("../assets/camera-controls/zoom-in-normal.svg");
+
+      &:active {
+        background-image: url("../assets/camera-controls/zoom-in-onclick.svg");
+      }
+
+      &:disabled {
+        background-image: url("../assets/camera-controls/zoom-in-disabled.svg");
+      }
+    }
+
+    .zoom-out-btn {
+      background-image: url("../assets/camera-controls/zoom-out-normal.svg");
+
+      &:active {
+        background-image: url("../assets/camera-controls/zoom-out-onclick.svg");
+      }
+
+      &:disabled {
+        background-image: url("../assets/camera-controls/zoom-out-disabled.svg");
+      }
+    }
+  }
+
+  .pan-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+
+    .arrow-up {
+      background-image: url("../assets/camera-controls/up-normal.svg");
+
+      &:active {
+        background-image: url("../assets/camera-controls/up-onclick.svg");
+      }
+      &:disabled {
+        background-image: url("../assets/camera-controls/up-disabled.svg");
+      }
+    }
+    .arrow-down {
+      background-image: url("../assets/camera-controls/down-normal.svg");
+
+      &:active {
+        background-image: url("../assets/camera-controls/down-onclick.svg");
+      }
+      &:disabled {
+        background-image: url("../assets/camera-controls/down-disabled.svg");
+      }
+    }
+    // width: 75px;
+    // justify-content: center;
+    .middle-con {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+
+      .center {
+        background-image: url("../assets/camera-controls/center-normal.svg");
+
+        &:active {
+          background-image: url("../assets/camera-controls/center-onclick.svg");
+        }
+        &:disabled {
+          background-image: url("../assets/camera-controls/center-disabled.svg");
+        }
+      }
+
+      .arrow-left {
+        background-image: url("../assets/camera-controls/left-normal.svg");
+
+        &:active {
+          background-image: url("../assets/camera-controls/left-onclick.svg");
+        }
+        &:disabled {
+          background-image: url("../assets/camera-controls/left-disabled.svg");
+        }
+      }
+
+      .arrow-right {
+        background-image: url("../assets/camera-controls/right-normal.svg");
+
+        &:active {
+          background-image: url("../assets/camera-controls/right-onclick.svg");
+        }
+        &:disabled {
+          background-image: url("../assets/camera-controls/right-disabled.svg");
+        }
+      }
+    }
+  }
+
+  button {
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: auto;
+    }
+  }
+}

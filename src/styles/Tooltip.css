@@ -1,0 +1,39 @@
+/* Tooltip.css */
+.tooltip {
+  position: relative;
+  pointer-events: none;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  border: solid 8px transparent;
+}
+
+.tooltip-top::before {
+  border-bottom-color: #414e58;
+  top: -16px;
+  left: var(--arrow-position);
+  transform: translateX(-50%);
+}
+
+.tooltip-bottom::before {
+  border-top-color: #414e58;
+  bottom: -16px;
+  left: var(--arrow-position);
+  transform: translateX(-50%);
+}
+
+.tooltip-left::before {
+  border-right-color: #414e58;
+  top: var(--arrow-position);
+  left: -16px;
+  transform: translateY(-50%);
+}
+
+.tooltip-right::before {
+  border-left-color: #414e58;
+  top: var(--arrow-position);
+  right: -16px;
+  transform: translateY(-50%);
+}

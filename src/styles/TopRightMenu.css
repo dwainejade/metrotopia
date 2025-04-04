@@ -1,0 +1,513 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #414042;
+}
+h1,
+h2,
+h3 {
+  font-family: 'Termina Heavy', sans-serif;
+}
+.nature-preserve h1,
+.residential h1,
+.nature-preserve h2,
+.residential h2,
+.nature-preserve h3,
+.residential h3 {
+  color: #006838;
+}
+.nature-preserve p,
+.residential p {
+  color: #006838;
+}
+.nature-preserve button,
+.residential button {
+  border-color: #92cfc4;
+}
+.nature-preserve button:hover,
+.residential button:hover {
+  background-color: #a6dbbe;
+}
+.commercial h1,
+.commercial h2,
+.commercial h3 {
+  color: #4c72b8;
+}
+.commercial p {
+  color: #4e72b0;
+}
+.commercial button {
+  border-color: #779de0;
+}
+.commercial button:hover {
+  background-color: #a1bef5;
+}
+.industrial h1,
+.industrial h2,
+.industrial h3 {
+  color: #8d5999;
+}
+.industrial p {
+  color: #784c82;
+}
+.industrial button {
+  border-color: #8d5999;
+}
+.industrial button:hover {
+  background-color: #d8aae3;
+}
+.services h1,
+.services h2,
+.services h3 {
+  color: #c78e67;
+}
+.services p {
+  color: #a8561e;
+}
+.services button {
+  border-color: #c78e67;
+}
+.services button:hover {
+  background-color: #dbb093;
+}
+.top-right-menu {
+  background: #f5f5f5ee;
+  border-radius: 25px;
+  padding: 5px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 4px;
+  pointer-events: auto;
+  color: #406325;
+  z-index: 10;
+}
+.top-right-menu.ess,
+.top-right-menu.lwl {
+  width: 390px;
+  justify-content: space-between;
+}
+.top-right-menu .btn {
+  background-color: transparent;
+  transition: all 0.15s ease-in-out;
+}
+.top-right-menu .btn svg {
+  opacity: 0.5;
+}
+.top-right-menu .btn img {
+  height: 23px;
+  width: 23px;
+}
+.top-right-menu .btn.active {
+  background-color: white;
+  border-radius: 20px;
+  filter: drop-shadow(1px 1px 2px #acacac);
+}
+.top-right-menu .expanded-menu {
+  position: absolute;
+  top: 48px;
+  right: 15px;
+  min-width: 256px;
+  width: 360px;
+  background-color: #f5f5f5ee;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  pointer-events: auto;
+  padding: 0 8px;
+  overflow: hidden;
+  z-index: 10;
+}
+.top-right-menu .expanded-menu.closed {
+  pointer-events: none;
+  opacity: 1;
+}
+.top-right-menu .expanded-menu .details-header {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
+  justify-content: space-between;
+  gap: 6px;
+  border-bottom: 1px solid black;
+  padding: 1% 2%;
+  margin-bottom: 8px;
+}
+.top-right-menu .expanded-menu .details-header h2 {
+  font-size: 1.1rem;
+  font-weight: bolder;
+  margin: 0;
+  flex: 1;
+  padding: 0.5% 1%;
+}
+.top-right-menu .expanded-menu .details-header .toggle-chart-btn {
+  background-color: transparent;
+  height: 22px;
+  width: 22px;
+  background-image: url("../assets/top-right-menu/graph-button.svg");
+}
+.top-right-menu .expanded-menu .details-header .toggle-chart-btn.active {
+  background-image: url("../assets/top-right-menu/graph-hover.svg");
+}
+.top-right-menu .expanded-menu .details-header .toggle-chart-btn:hover {
+  background-image: url("../assets/top-right-menu/graph-normal.svg");
+}
+.top-right-menu .expanded-menu .details-header .add-btn {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.top-right-menu .expanded-menu .details-header .add-btn:hover {
+  background-color: unset;
+}
+.top-right-menu .expanded-menu .urbanization-pie-chart .top-category-details p {
+  text-align: left;
+}
+.top-right-menu .expanded-menu .urbanization-pie-chart .top-category-details p .category-label {
+  color: #406325;
+  font-weight: bold;
+}
+.top-right-menu .expanded-menu .bottom-categories {
+  margin-top: 10px;
+  gap: 4px;
+}
+.top-right-menu .expanded-menu .bottom-categories.nature,
+.top-right-menu .expanded-menu .bottom-categories.urbanization {
+  margin-top: 10px;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-add-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-add-details span {
+  color: #406325;
+  font-weight: bold;
+}
+.top-right-menu .expanded-menu .bottom-categories.pollution .top-category-details,
+.top-right-menu .expanded-menu .bottom-categories.population-stats .top-category-details {
+  display: flex;
+  flex-direction: column;
+}
+.top-right-menu .expanded-menu .bottom-categories.wildlife-stats .top-category-details {
+  font-size: 0.95rem;
+}
+.top-right-menu .expanded-menu .bottom-categories.funding .top-category-details .category-label {
+  margin-right: 4px;
+}
+.top-right-menu .expanded-menu .bottom-categories.funding .top-category-details .conversion-note {
+  font-size: 0.85rem;
+}
+.top-right-menu .expanded-menu .bottom-categories .top-category-details {
+  padding: 0 10px;
+  margin: 6px 0;
+}
+.top-right-menu .expanded-menu .bottom-categories .top-category-details p {
+  font-weight: 500;
+}
+.top-right-menu .expanded-menu .bottom-categories .top-category-details p:not(:first-child) {
+  margin-top: 2px;
+}
+.top-right-menu .expanded-menu .bottom-categories .top-category-details p .category-label {
+  color: #406325;
+  font-weight: bold;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist .bottom-label {
+  color: #406325;
+  font-weight: bold;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist p .bottom-label {
+  color: #406325;
+  font-weight: bold;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist p .category-check svg {
+  border: 1px solid #4a4a4a;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.population {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  gap: 6px;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.population p {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 16px;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.wildlife .category-label.lwl {
+  text-align: left;
+  font-weight: bold;
+  color: #406325;
+  flex: 30%;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.wildlife p {
+  font-size: 0.94rem;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.wildlife p:not(:last-child) {
+  margin-bottom: 5px;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.wildlife p span {
+  flex: 1;
+  text-align: right;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.wildlife p span .wildlife-stat-count {
+  margin-right: 4px;
+  font-size: 0.9rem;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.wildlife p span .wildlife-stat-percent {
+  color: #000;
+  font-size: 0.94rem;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.urbanization,
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.energy,
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.water,
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.pollution {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 8px;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.urbanization p,
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.energy p,
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.water p,
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.pollution p {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: black;
+  margin: 0;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.urbanization p span:first-child,
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.energy p span:first-child,
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.water p span:first-child,
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.pollution p span:first-child {
+  flex-grow: 1;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.urbanization p.add-details,
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.energy p.add-details,
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.water p.add-details,
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.pollution p.add-details {
+  font-size: 0.95rem;
+  color: #4a4a4a;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.urbanization p.cars-row,
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.energy p.cars-row,
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.water p.cars-row,
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.pollution p.cars-row {
+  grid-column: 1/-1;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.nature {
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.nature .nature-tree-preserve {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 4px;
+  font-weight: 500;
+  color: #4a4a4a;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.nature .nature-tree-preserve .category-label {
+  color: #406325;
+  font-weight: bold;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.nature .nature-stats {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 6px 10px;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.nature .nature-stats p {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #000;
+  margin: 0;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.nature .nature-stats p span:first-child {
+  flex-grow: 1;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.urbanization {
+  display: flex;
+  flex-direction: column;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.urbanization h3 {
+  text-align: center;
+  font-size: 1.1rem;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.urbanization .details-grid {
+  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 8px;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.urbanization .details-grid .bottom-label {
+  font-size: 0.9rem;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.urbanization .details-grid .bottom-label .urban-percent {
+  color: #4a4a4a;
+  font-weight: 600;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.pollution {
+  margin-top: 8px;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.pollution .pollution-note {
+  grid-column: 1 / -1;
+  font-weight: normal;
+  font-size: 0.9rem;
+  color: black;
+  margin: 3px 0;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.funding {
+  margin-top: 8px;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.funding h3 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.funding .funding-grid-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 8px;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.funding .funding-grid-details p {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.funding .funding-grid-details .funding-note {
+  grid-column: 1 / -1;
+  margin: 3px 0;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.energy {
+  background-color: transparent !important;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.energy p.clickable {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.energy p.clickable:hover {
+  background-color: #d0d0d0;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.energy p:not(.clickable) {
+  pointer-events: none;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.energy p.active {
+  background-color: #e6b466;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-checklist.energy p span {
+  user-select: none;
+}
+.top-right-menu .expanded-menu .bottom-categories.energy .bottom-energy-note {
+  padding: 0 8px;
+  font-size: 0.9rem;
+}
+.top-right-menu .expanded-menu .bottom-categories.urbanization .bottom-urbanization-note {
+  padding: 0 8px;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+.top-right-menu .expanded-menu .bottom-categories.water .bottom-label {
+  font-size: 0.9rem;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-funding-details {
+  margin: 8px 4px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  color: black;
+  font-weight: 500;
+}
+.top-right-menu .expanded-menu .bottom-categories .bottom-funding-details .bottom-label {
+  color: #406325;
+  font-weight: 700;
+}
+.top-right-menu .expanded-menu p {
+  color: #4a4a4a;
+}
+.win-conditions-container .bottom-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.win-conditions-container .bottom-checklist .primary-goals,
+.win-conditions-container .bottom-checklist .secondary-goals {
+  padding: 4px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+.win-conditions-container .bottom-checklist h4 {
+  text-align: center;
+  margin-bottom: 4px;
+}
+.win-conditions-container .bottom-checklist h4 .secondary-title {
+  margin-top: 4px;
+}
+.win-conditions-container .bottom-checklist .population-goal-note,
+.win-conditions-container .bottom-checklist .secondary-goal-note {
+  padding: 4px;
+  font-size: 13px;
+}
+.win-conditions-container .bottom-checklist .divider {
+  border-bottom: 1px solid #000;
+}
+.win-conditions-container .bottom-checklist .condition-item {
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.win-conditions-container .bottom-checklist .condition-item:hover {
+  background-color: #ececec;
+}
+.win-conditions-container .bottom-checklist .condition-item:hover .condition-label {
+  color: #ffab2e;
+}
+.win-conditions-container .bottom-checklist .condition-item .condition-icon {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+.win-conditions-container .bottom-checklist .condition-item .condition-details {
+  display: flex;
+  flex-direction: column;
+}
+.win-conditions-container .bottom-checklist .condition-item .condition-details .condition-label {
+  font-weight: bold;
+  margin: 0;
+  font-size: 16px;
+}
+.win-conditions-container .bottom-checklist .condition-item .condition-details .condition-values {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}

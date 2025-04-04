@@ -1,0 +1,137 @@
+@import (optional) url('assets/fonts/Termina-Heavy.otf');
+@import (optional) url('assets/fonts/OpenSans-Regular.ttf');
+
+// Font Definitions
+@font-header: 'Termina Heavy', sans-serif;
+@font-body: 'Open Sans', sans-serif;
+
+// General Colors
+@color-dark-green: #406325;
+@color-yellow-hover: #fbb040;
+@color-teal: #78aaa1;
+@color-black-text: #414042;
+@color-light-blue-stats: #99e4fb;
+@color-light-green-stats: #9ee0d5;
+@color-gray-text: #808285;
+@color-yellow-green-highlight: #d6f574;
+@color-bg-light-gray: #f5f5f5ee;
+@color-dark-orange-highlight: #d48d35;
+
+// Nature Preserve & Residential
+@color-nature-header: #006838;
+@color-nature-text-secondary: @color-nature-header;
+@color-nature-button-outline: #92cfc4;
+@color-nature-text-tertiary: #6d6e71;
+@color-nature-final-button: #a6dbbe;
+
+// Commercial
+@color-commercial-header: #4c72b8;
+@color-commercial-text-secondary: #4e72b0;
+@color-commercial-button-outline: #779de0;
+@color-commercial-text-tertiary: #6d6e71;
+@color-commercial-final-button: #a1bef5;
+
+// Industrial
+@color-industrial-header: #8d5999;
+@color-industrial-text-secondary: #784c82;
+@color-industrial-button-outline: @color-industrial-header;
+@color-industrial-text-tertiary: #6d6e71;
+@color-industrial-final-button: #d8aae3;
+
+// Services
+@color-services-header: #c78e67;
+@color-services-text-secondary: #a8561e;
+@color-services-button-outline: @color-services-header;
+@color-services-text-tertiary: #6d6e71;
+@color-services-final-button: #dbb093;
+
+// Font Sizes
+@font-size-header-large: 2.5rem;
+@font-size-header-medium: 2rem;
+@font-size-body: 1rem;
+@font-size-small: 0.875rem;
+
+// Global Text Styling
+body {
+  font-family: @font-body;
+  color: @color-black-text;
+}
+
+h1,
+h2,
+h3 {
+  font-family: @font-header;
+}
+
+// Nature Preserve & Residential Specific Styling
+.nature-preserve,
+.residential {
+  h1,
+  h2,
+  h3 {
+    color: @color-nature-header;
+  }
+  p {
+    color: @color-nature-text-secondary;
+  }
+  button {
+    border-color: @color-nature-button-outline;
+    &:hover {
+      background-color: @color-nature-final-button;
+    }
+  }
+}
+
+// Commercial Specific Styling
+.commercial {
+  h1,
+  h2,
+  h3 {
+    color: @color-commercial-header;
+  }
+  p {
+    color: @color-commercial-text-secondary;
+  }
+  button {
+    border-color: @color-commercial-button-outline;
+    &:hover {
+      background-color: @color-commercial-final-button;
+    }
+  }
+}
+
+// Industrial Specific Styling
+.industrial {
+  h1,
+  h2,
+  h3 {
+    color: @color-industrial-header;
+  }
+  p {
+    color: @color-industrial-text-secondary;
+  }
+  button {
+    border-color: @color-industrial-button-outline;
+    &:hover {
+      background-color: @color-industrial-final-button;
+    }
+  }
+}
+
+// Services Specific Styling
+.services {
+  h1,
+  h2,
+  h3 {
+    color: @color-services-header;
+  }
+  p {
+    color: @color-services-text-secondary;
+  }
+  button {
+    border-color: @color-services-button-outline;
+    &:hover {
+      background-color: @color-services-final-button;
+    }
+  }
+}
