@@ -13,6 +13,7 @@ import AudioPlayer from "@src/helpers/AudioPlayer";
 import "@src/styles/UI.less";
 
 import BuildingInfoMenu from "./BuildingInfoMenu";
+import SandboxConstructionMenu from "../sandbox/SandboxConstructionMenu";
 import ConstructionMenu from "./ConstructionMenu";
 import ESSBuildingInfoMenu from "./ESSBuildingInfoMenu";
 import ESSConstructionMenu from "./ESSConstructionMenu";
@@ -156,6 +157,9 @@ const EcoMetropolisUI = () => {
 				<>
 					{version === "main" && (
 						<ConstructionMenu onBuild={handleBuild} onCancel={handleCancel} />
+					)}
+					{version === "sandbox" && (
+						<SandboxConstructionMenu onBuild={handleBuild} onCancel={handleCancel} />
 					)}
 					{version === "ess" && <ESSConstructionMenu onCancel={handleCancel} />}
 					{version === "pp" && (

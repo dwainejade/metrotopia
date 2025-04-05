@@ -103,7 +103,7 @@ const BottomRightUI = () => {
 		<div className={`bottom-right-ui-wrapper ${version}`}>
 			{/* <Tippy singleton={source} moveTransition="transform 0.2s ease-out" animation="shift-away-subtle" /> */}
 			{/* Funds */}
-			{version === "main" && (
+			{(version === "main" || version === "sandbox") && (
 				<>
 					<Tippy content="Available Funds" animation="shift-away-subtle">
 						<div

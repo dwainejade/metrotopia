@@ -61,7 +61,7 @@ export const APP_VERSIONS = {
 	nr: {
 		id: "sandbox",
 		paths: ["sandbox"],
-		title: "MetroTopia",
+		title: "MetroTopia: Sandbox",
 		gridStore: useSandboxGridStore,
 		resourceStore: useSandboxResourcesStore,
 	},

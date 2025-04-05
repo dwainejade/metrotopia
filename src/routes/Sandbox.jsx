@@ -14,7 +14,6 @@ import StartScreen from "../components/StartScreen";
 import LoadingScreen from "../components/LoadingScreen";
 import GridTransition from "../components/ui/GridTransition";
 import { Head } from "vite-react-ssg";
-// import useResourcesStore from "../stores/resourcesStore";
 
 const getLastPathSegment = (path) => {
 	if (!path) return "";

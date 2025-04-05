@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import gameObjects, { greenModMetrics } from "../data/gameObjects";
-import useStore from "./mainGridStore";
+import gameObjects, { greenModMetrics } from "../data/sandboxGameObjects";
+import useStore from "./sandboxGridStore";
 import randomizeInRange from "../helpers/randomizeNumbers";
 import {
 	calculateSatisfaction,
@@ -12,8 +12,8 @@ const initialResourceState = {
 	notifications: [],
 
 	funds: {
-		starting: 850000,
-		current: 850000,
+		starting: 100000000,
+		current: 100000000,
 		spent: 0,
 		totalTaxGained: 0,
 	},
@@ -24,7 +24,7 @@ const initialResourceState = {
 	},
 	population: {
 		total: 0,
-		target: 7500,
+		target: 50000,
 		breakdown: {
 			apartmentComplex: 0,
 			singleFamilyHomes: 0,
@@ -1167,7 +1167,7 @@ const useMainResourcesStore = create(
 			},
 		}),
 		{
-			name: "nr-city-resources-main",
+			name: "city-resources-sandbox",
 			storage: createJSONStorage(() => localStorage),
 		}
 	)

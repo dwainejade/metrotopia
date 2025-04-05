@@ -1,21 +1,21 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import useAudioStore from "./audioStore";
-import useResourcesStore from "./mainResourcesStore";
+import useResourcesStore from "./sandboxResourcesStore";
 import useCameraStore from "./cameraStore";
 import generateMetricsForTile from "../helpers/generateMetricsForTile";
 import gameObjects, {
+	constants,
 	assignRandomModsToCities,
 	greenModMetrics,
 	powerModMetrics,
 	transportationConnectionModifiers,
-} from "../data/gameObjects";
+} from "../data/sandboxGameObjects";
 import {
 	collectModsForNewTile,
 	propagateModsToNeighbors,
 } from "../helpers/propagateMods";
 import { spaceEachWord } from "../helpers/capitalizeEachWord";
-import { constants } from "../data/gameObjects";
 import { v4 as uuidv4 } from "uuid";
 
 const verifyPondsAndMeadows = (tiles) => {
@@ -812,12 +812,12 @@ const useMainGridStore = create(
 				// Check if player has enough funds
 				const buildingCost =
 					gameObjects.urbanStructures[newBuildingType]?.metrics?.cost || 0;
-				if (currentFunds < buildingCost) {
-					canBuild = false;
-					reasons.push(
-						`Insufficient funds. You need $${buildingCost} MB, but only have $${currentFunds} MB.`
-					);
-				}
+				// if (currentFunds < buildingCost) {
+				// 	canBuild = false;
+				// 	reasons.push(
+				// 		`Insufficient funds. You need $${buildingCost} MB, but only have $${currentFunds} MB.`
+				// 	);
+				// }
 
 				// Get neighboring tiles
 				const neighboringTiles = getNeighboringTilesInfo(tileKey);
@@ -1471,7 +1471,7 @@ const useMainGridStore = create(
 			// Add initialization function
 			initializeStore: () => {
 				const state = get();
-				const storedData = localStorage.getItem("city-grid");
+				const storedData = localStorage.getItem("city-grid-sandbox");
 
 				if (
 					!storedData ||
@@ -1492,7 +1492,7 @@ const useMainGridStore = create(
 		}),
 
 		{
-			name: "nr-city-grid-main",
+			name: "city-grid-sandbox",
 			storage: createJSONStorage(() => localStorage),
 			onRehydrateStorage: () => (state) => {
 				// This runs after rehydration is complete
