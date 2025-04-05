@@ -836,12 +836,12 @@ const useMainGridStore = create(
 						tile.type !== "emptyTile" && gameObjects.urbanStructures[tile.type]
 				);
 
-				if (!isEdgeTile && !hasAdjacentBuilding) {
-					canBuild = false;
-					reasons.push(
-						"Building must be placed next to another building or on the edge of the grid."
-					);
-				}
+				// if (!isEdgeTile && !hasAdjacentBuilding) {
+				// 	canBuild = false;
+				// 	reasons.push(
+				// 		"Building must be placed next to another building or on the edge of the grid."
+				// 	);
+				// }
 
 				// Get building restrictions for the new building type
 				const restrictions =
