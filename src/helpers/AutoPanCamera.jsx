@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useThree, useFrame } from '@react-three/fiber';
-import useCameraStore from '../stores/cameraStore';
+import useCameraStore from '@src/stores/cameraStore';
 
 const AutoPanCamera = ({ isStartScreen }) => {
     const { camera } = useThree();

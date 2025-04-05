@@ -103,7 +103,7 @@ const Main = () => {
 	};
 
 	return (
-		<div className="Main" ref={ref}>
+		<div className={`Main current`} ref={ref}>
 			<Head>
 				<title>{title}</title>
 			</Head>
@@ -133,7 +133,7 @@ const Main = () => {
 				<Canvas id="canvas" ref={ref} dpr={[1, 2]} flat key={canvasKey}>
 					<OrthographicCamera
 						makeDefault
-						zoom={300}
+						zoom={800}
 						position={[0, 500, 0]}
 						top={vertical}
 						bottom={-vertical}
