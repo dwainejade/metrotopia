@@ -58,7 +58,7 @@ export const APP_VERSIONS = {
 		gridStore: usePpGridStore,
 		resourceStore: usePpResourcesStore,
 	},
-	nr: {
+	sandbox: {
 		id: "sandbox",
 		paths: ["sandbox"],
 		title: "MetroTopia: Sandbox",
@@ -69,7 +69,7 @@ export const APP_VERSIONS = {
 
 // Create the version store
 const useVersionStore = create((set) => ({
-	current: "main", // default version
+	current: "", 
 	title: APP_VERSIONS.main.title,
 	path: "",
 	setVersion: (versionId, title, path) =>
