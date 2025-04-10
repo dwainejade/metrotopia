@@ -72,6 +72,9 @@ const StartScreen = ({ onStart }) => {
           {version === 'ee' && (
             <img src={preloadedUIImages.title_ee.src} alt={data.title} />
           )}
+          {version === 'sandbox' && (
+            <img src={preloadedUIImages.title_sandbox.src} alt={data.title} />
+          )}
         </animated.div>
 
         <animated.div style={descriptionSpring} className="description-con">

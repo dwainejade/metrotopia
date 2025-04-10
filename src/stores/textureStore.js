@@ -248,6 +248,12 @@ const useTextureStore = create((set) => ({
   imageUrls: {
     // UI Start Screen
     title: 'assets/ui/title_main.png',
+    title_ess: 'assets/ess/title_ess.png',
+    title_pp: 'assets/pp/title_pp.png',
+    title_lwl: 'assets/lwl/title_lwl.png',
+    title_aag: 'assets/aag/title_aag.png',
+    title_ee: 'assets/ee/title_ee.png',
+    title_sandbox: 'assets/sandbox/title_sandbox.png',
     // UI BuildingInfo
     apartmentComplex: 'assets/ui/buildings/bldg_apartment_sm.png',
     factory: 'assets/ui/buildings/bldg_factory_sm.png',
@@ -268,12 +274,7 @@ const useTextureStore = create((set) => ({
     // top right menu
     info: 'assets/ui/upper-right-menu/graph-button.svg',
 
-    // title images
-    title_ess: 'assets/ess/title_ess.png',
-    title_pp: 'assets/pp/title_pp.png',
-    title_lwl: 'assets/lwl/title_lwl.png',
-    title_aag: 'assets/aag/title_aag.png',
-    title_ee: 'assets/ee/title_ee.png',
+   
   },
 
   // ** Store Preloaded Assets **
