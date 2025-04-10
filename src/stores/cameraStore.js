@@ -5,17 +5,17 @@ const createCameraStore = () => {
 	const panRef = {
 		limits: { minX: 0, maxX: 0, minZ: 0, maxZ: 0 },
 		speed: 12,
-		autoSpeed: 0.0008,
+		autoSpeed: 0.001,
 		duration: 15000,
 		lastStartTime: 0,
 		currentDirection: null,
 	};
 
 	const zoomRef = {
-		current: 300,
+		current: 800,
 		target: null,
 		min: 150,
-		max: 2000,
+		max: 2600,
 		speed: 0.1,
 		target: null,
 		baseSpeed: 0.01,
@@ -29,7 +29,8 @@ const createCameraStore = () => {
 			800,
 			1100,
 			1500,
-			2000, // Most zoomed in
+			2000,
+			2600, // Most zoomed in
 		],
 	};
 

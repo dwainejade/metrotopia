@@ -1,0 +1,5 @@
+{
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/city-builder-interactive/build/$1" }
+    ]
+  }

@@ -61,6 +61,10 @@ Remember to carefully evaluate the impact of building on any given parcel before
 			title: "MetroTopia: At a Glance",
 			description: `In this activity, you will explore how different places and their environments are interconnected. You’ll navigate through a beachfront city, a fishing industry along a river, a small rural town, a lumber and paper industrial complex, and even isolated country homes. By clicking on each tile, you can learn more about each structure and how it interacts with the surrounding environment. This experience will help you understand the delicate balance between human activities and the natural world. Let's get started!`,
 		},
+		sandbox: {
+			title: "MetroTopia: Sandbox Mode",
+			description: `In this sandbox mode, you have the freedom to build without any restrictions. You can place buildings wherever you like, regardless of zoning laws or environmental considerations. This mode allows you to experiment with different layouts and designs without worrying about the consequences. Let's get started!`,
+		},
 	};
 };
 

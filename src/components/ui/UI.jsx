@@ -13,6 +13,7 @@ import AudioPlayer from "@src/helpers/AudioPlayer";
 import "@src/styles/UI.less";
 
 import BuildingInfoMenu from "./BuildingInfoMenu";
+import SandboxConstructionMenu from "../sandbox/SandboxConstructionMenu";
 import ConstructionMenu from "./ConstructionMenu";
 import ESSBuildingInfoMenu from "./ESSBuildingInfoMenu";
 import ESSConstructionMenu from "./ESSConstructionMenu";
@@ -26,6 +27,9 @@ import EEBuildingInfoMenu from "../ee/EEBuildingInfoMenu";
 import EEConstructionMenu from "../ee/EEConstructionMenu";
 import EETopRightMenu from "../ee/EETopRightMenu";
 import AAGInfoModal from "../aag/AAGInfoModal";
+
+import SandboxTopRightMenu from "../sandbox/SandboxTopRightMenu";
+
 import TopRightMenuLWL from "../lwl/TopRightMenuLWL";
 import CameraControlsUI from "./CameraControlsUI";
 import InstructionsModal from "./InstructionsModal";
@@ -99,6 +103,7 @@ const EcoMetropolisUI = () => {
 		<div className="ecometropolis-ui">
 			<AudioPlayer />
 			<TopLeftMenu activeIcon={activeIcon} setActiveIcon={setActiveIcon} version={version} />
+			
 			{version === "main" && (
 				<TopRightMenu
 					expandedMenu={expandedMenu}
@@ -134,6 +139,13 @@ const EcoMetropolisUI = () => {
 					selectTab={selectTab}
 				/>
 			)}
+			{version === "sandbox" && (
+				<SandboxTopRightMenu
+					expandedMenu={expandedMenu}
+					activeTab={activeTab}
+					selectTab={selectTab}
+				/>
+			)}
 
 			{version === "pp" && <PPBottomRightUI />}
 			{version !== "pp" && version !== "aag" && <BottomRightUI />}
@@ -146,12 +158,18 @@ const EcoMetropolisUI = () => {
 					{version === "main" && (
 						<ConstructionMenu onBuild={handleBuild} onCancel={handleCancel} />
 					)}
+					{version === "sandbox" && (
+						<SandboxConstructionMenu onBuild={handleBuild} onCancel={handleCancel} />
+					)}
 					{version === "ess" && <ESSConstructionMenu onCancel={handleCancel} />}
 					{version === "pp" && (
 						<PPConstructionMenu onBuild={handleBuild} onCancel={handleCancel} />
 					)}
 					{version === "lwl" && <LWLConstructionMenu onCancel={handleCancel} />}
 					{version === "ee" && <EEConstructionMenu onCancel={handleCancel} />}
+					{version === "sandbox" && (
+						<ConstructionMenu onBuild={handleBuild} onCancel={handleCancel} />
+					)}
 				</>
 			)}
 			{/* Conditional Rendering for Building Info Menus */}
@@ -171,6 +189,9 @@ const EcoMetropolisUI = () => {
 					)}
 					{version === "ee" && (
 						<EEBuildingInfoMenu onCancel={handleCancel} key={selectedTile} />
+					)}
+					{version === "sandbox" && (
+						<BuildingInfoMenu onCancel={handleCancel} key={selectedTile} />
 					)}
 				</>
 			)}

@@ -11,6 +11,8 @@ import useAagGridStore from "./aagGridStore";
 import useAagResourcesStore from "./aagResourcesStore";
 import usePpGridStore from "./ppGridStore";
 import usePpResourcesStore from "./ppResourcesStore";
+import useSandboxGridStore from "./sandboxGridStore";
+import useSandboxResourcesStore from "./sandboxResourcesStore";
 
 // Configurations for different versions
 export const APP_VERSIONS = {
@@ -56,11 +58,18 @@ export const APP_VERSIONS = {
 		gridStore: usePpGridStore,
 		resourceStore: usePpResourcesStore,
 	},
+	sandbox: {
+		id: "sandbox",
+		paths: ["sandbox"],
+		title: "MetroTopia: Sandbox",
+		gridStore: useSandboxGridStore,
+		resourceStore: useSandboxResourcesStore,
+	},
 };
 
 // Create the version store
 const useVersionStore = create((set) => ({
-	current: "main", // default version
+	current: "", 
 	title: APP_VERSIONS.main.title,
 	path: "",
 	setVersion: (versionId, title, path) =>

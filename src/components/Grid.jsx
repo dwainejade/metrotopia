@@ -181,7 +181,7 @@ const Grid = () => {
 								neighborTile.type !== "emptyTile"
 						);
 
-						if (isLocked || (!isEdgeTile && !hasUrbanNeighbor)) {
+						if (isLocked || (!isEdgeTile && !hasUrbanNeighbor && (buildType !== "sandbox"))) {
 							setCurrentModal("NaturePreserve");
 						} else if (isNaturalFeature(tileType) || tileType === "emptyTile") {
 							setCurrentModal("Construction");

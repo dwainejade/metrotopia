@@ -3,7 +3,8 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/city-builder-interactive/build',
+  // Use conditional base path for different environments
+  base: process.env.NODE_ENV === 'production' ? '/' : '/city-builder-interactive/build',
   ssgOptions: {
     script: 'async',
     dirStyle: 'nested',
